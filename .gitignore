@@ -27,6 +27,11 @@
 
 # IntelliJ
 /out/
+.idea/compiler.xml
+.idea/magento.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/copyright/profiles_settings.xml
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
