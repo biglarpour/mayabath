@@ -31,10 +31,10 @@
 .postDetails {
     font-size: 13px;
     padding: 0 0 20px;
-    color: #73d5c9;
+    color: #3498db;
 }
 .postDetails a,
-.postDetails-tags li a {color: #73d5c9;}
+.postDetails-tags li a {color: #3498db;}
 .postDetails a:hover,
 .postDetails-tags li a:hover {color: #000;}
 .postDetails i {
@@ -59,7 +59,7 @@
 .aw-blog-read-more:hover {   color: #fff;}
 .aw-blog-read-more:after,
 .aw-blog-read-more:before {
-    background: none repeat scroll 0 0 #73d5c9;
+    background: none repeat scroll 0 0 #3498db;
     bottom: 50%;
     content: "";
     height: 0;
@@ -268,7 +268,7 @@
     color: #000;
     font-weight: bold;
 }
-.widget-latest-title a:hover {color: #73d5c9;}
+.widget-latest-title a:hover {color: #3498db;}
 .blog-bg .postContent {
     font-size: 13px;
     line-height: 22px;
@@ -286,7 +286,7 @@
 .widget-latest-details {font-size: 13px;}
 .widget-latest-details {color: #000;}
 .widget-latest-details a,
-.widget-latest-details a i { color: #73d5c9;}
+.widget-latest-details a i { color: #3498db;}
 .widget-latest-details a:hover {text-decoration: underline;}
 .widget-latest-details .widget-latest-data,
 .widget-latest-details .widget-latest-comment {
