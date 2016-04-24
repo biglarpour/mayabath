@@ -84,6 +84,7 @@
   top: 40%;
 }
 .grid-full > li > a .thumbnail {display: none;}
+#nav li a span {font-size: 24px;letter-spacing:1px;}
 .grid-full > li > a:before,
 .grid-full > li > a:after {
   content: "";
