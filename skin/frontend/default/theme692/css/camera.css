@@ -147,6 +147,7 @@
 	z-index: 4;
 }
 .camera_caption {
+	top: 0;
 	bottom: 0;
 	display: block;
 	position: absolute;
@@ -1072,7 +1073,7 @@
 .fluid_container_wrap { overflow: hidden; }
 .camera_wrap {margin-bottom: 0 !important;}
 .camera_caption {}
-.camera_caption a:hover {background: #333333; border-color: #000;}
+.camera_caption a:hover {background: #3498db; border-color: #000;}
 .camera_caption > div {background: none; padding: 0 4% 4%; overflow: hidden;}
 .lof_camera_title {
 	font-size: 25px;
@@ -1102,7 +1103,7 @@
 	padding: 0 30px; 
 	background-color: rgba(0,0,0,0.4);
 }
-.camera_caption .camera-link:hover {background-color: #303c4b; }
+.camera_caption .camera-link:hover {background-color: #3498db;}
 .camera_prev, 
 .camera_next {
 	text-align: center;
@@ -1137,18 +1138,53 @@
 .camera_wrap .camera_pag .camera_pag_ul li {width: 14px; height: 14px; background: #292b2d; margin: 0 3px;}
 .camera_wrap .camera_pag .camera_pag_ul li:hover,
 .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent {background: #17bcb8; }
+
+.top_camera_info {
+    background-color: rgba(0,0,0,0.4);
+    width: 500px;
+    max-width: 400px;
+    min-height: 300px;
+    text-align: left;
+    position: absolute;
+    top: 25%;
+    padding: 30px;
+    margin-left: 10%;
+    font-size: 32px;
+    }
+.top_camera_info a {
+    color:white;
+    position:absolute;
+    left:30px;
+    bottom:30px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 18px;
+    padding: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    }
+
+.bottom_camera_info {
+    position: absolute;
+    right: 5%;
+    bottom: 30px;
+}
+
 @media only screen and (max-width: 1720px) {
 	.lof_camera_title {font-size: 25px; line-height: 25px;}
 	.lof_camera_title1 {font-size: 15px; line-height: 15px;}
  }
-
-@media only screen and (max-width: 380px) { 
+@media only screen and (max-width: 991px) {
+    .top_camera_info {display:none;}
+}
+@media only screen and (max-width: 767px){
+	.camera_caption > div {display: none;}
+}
+@media only screen and (max-width: 380px) {
 	.lof_camera_title {font-size: 16px; line-height: 16px;}
 	.camera_prev, .camera_next {width: 25px; height: 25px; top: 44%; right: 3%;}
 	.camera_prev {left: 3%;}
 	.camera_prev:before, .camera_next:before {font-size: 12px; line-height: 25px;}
-}
-@media only screen and (max-width: 767px){
-	.camera_caption > div {display: none;}
 }
 

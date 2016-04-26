@@ -66,6 +66,7 @@
 					<a href="<?php echo Mage::getUrl('customer/account/login'); ?>" title="Log In" onclick="return false;">Log In</a>
 					<a href="<?php echo Mage::getUrl('customer/account/create'); ?>" title="Register">Register</a>
 				    <?php else:  ?>
+					<a href="<?php echo Mage::getUrl('customer/account'); ?>" title="Hello Customer" onclick="return true;">Hello <?php echo Mage::getSingleton('customer/session')->getCustomer()->getName(); ?></a>
 					<a href="<?php echo Mage::getUrl('customer/account/logout'); ?>" title="Log Out" onclick="return true;">Log Out</a>
 				    <?php endif;  ?>
 			    </div>

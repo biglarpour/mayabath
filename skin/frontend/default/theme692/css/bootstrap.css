@@ -1318,7 +1318,7 @@ pre code {
   overflow-y: scroll;
 }
 .container, .header-links {
-  padding: 0;
+  padding: 0 30px;
   margin-right: auto;
   margin-left: auto;
   max-width: 1500px;
