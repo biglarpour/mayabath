@@ -38,8 +38,8 @@ Default layout, loads most of the pages
 
                 <!-- <action method="addJs"><script>jquery/jquery-1.11.1.min.js</script></action> -->
                 <action method="addJs"><script>jquery/jquery-1.11.1.min.js</script></action>
-                <action method="addJs"><script>jquery/jquery-migrate-1.2.1.min.js</script></action>                
-                <action method="addJs"><script>jquery/jquery_noconflict.js</script></action>
+                <action method="addJs"><script>jquery/jquery-migrate-1.2.1.min.js</script></action>
+                <action method="addJs"><script>lib/jquery/noconflict.js</script></action>
 
                 <!-- <action method="addJs"><script>jquery/jquery-ui.js</script></action> -->
 
