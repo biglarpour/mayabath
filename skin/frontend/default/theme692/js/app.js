@@ -1149,7 +1149,38 @@ $j(document).ready(function () {
 // ==============================================
 // PDP - image zoom - needs to be available outside document.ready scope
 // ==============================================
+var settings = {
 
+    // set tint background
+    tint:true,
+    tintColour:'#F90',
+    tintOpacity:0.5,
+
+    // Size
+    zoomWindowHeight: 300,
+    zoomWindowWidth: 400,
+    borderSize: 0,
+
+    // Position
+    zoomWindowOffetx: 10,
+    zoomWindowOffety: 0,
+
+    // Additional settings for Zoomer positioning.
+    // zoomWindowPosition: 1,
+    // zoomType: "inner",
+
+    // Fade-in speed settings
+    zoomWindowFadeIn: 500,
+    zoomWindowFadeOut: 500,
+    lensFadeIn: 500,
+    lensFadeOut: 500,
+
+    // Ability to zoom by using the mouse scroll.
+    scrollZoom : true,
+
+    // inertia - my favorite one
+    easing: true
+}
 var ProductMediaManager = {
     IMAGE_ZOOM_THRESHOLD: 20,
     imageWrapper: null,
@@ -1191,7 +1222,7 @@ var ProductMediaManager = {
             }
         }
 
-        image.elevateZoom();
+        image.elevateZoom(settings);
     },
 
     swapImage: function(targetImage) {
