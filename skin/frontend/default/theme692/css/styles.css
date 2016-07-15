@@ -257,7 +257,19 @@ select {
 	moz-box-sizing:border-box;
 	-moz-box-sizing: border-box; 
 	-webkit-box-sizing: border-box; 
-	 box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    background-image: url("//cdn.shopify.com/s/files/1/0964/2388/t/2/assets/arrow-down.svg?8221109575247938886");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+    padding-right: 28px;
+    text-indent: 0.01px;
+    cursor: pointer;
+    background-color: rgb(245, 245, 245);
+    border-radius: 5px;
+    border: 1px solid #bbb;
 }
 select option { padding-right:10px; }
 select.multiselect option { border-bottom:1px solid #ddd; padding:2px 5px; }
@@ -532,9 +544,7 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 
 /* BreadCrumbs */
 .breadcrumbs {
-	background:#FBFBFB;
-	padding:8px 19px;
-	margin:0 0 60px;
+	margin:0 0 30px;
 	overflow:hidden;
 }
 .breadcrumbs li { float:left; }
@@ -545,15 +555,26 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 
 /* Page Heading */
 .page-title,
-.category-title {margin: 0 -10000px 40px -10000px; border-bottom: 1px solid #ececec; padding-bottom: 10px;}
-.category-title {display:block; }
+.category-title {padding-bottom: 10px;}
+.category-title {display:inline; }
+.main-category-title {display:block; }
 .home-id .page-title h1 {font-weight: 700;}
 .page-title h1,
 .page-title h2 {
 	font-size:34px;
 	line-height:34px;
 	color: #303c4b;
-	font-weight: 300;
+	letter-spacing: 4px;
+	font-weight: bold;
+	text-align: left;
+	text-transform: uppercase;
+}
+.main-page-title h1,
+.main-page-title h2 {
+	font-size:34px;
+	line-height:34px;
+	color: #303c4b;
+	font-weight: bold;
 	text-transform: uppercase;
 }
 .page-title.center,
@@ -577,7 +598,7 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 /********************************************************************************* End ********************************************************************************/
 
 /* Pager */
-.pager { text-align:center; }
+.pager { text-align:center; float:right; }
 .pager .amount { float:left; padding-top:2px; }
 .pager .amount span{ font-weight:bold;}
 .pager .amount.spinner{ padding-top:13px;}
@@ -599,7 +620,7 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 .pager ol > li > a:hover {background: none;}
 
 /* Sorter */
-.sorter {}
+.sorter {float: left}
 .sorter .view-mode { float:left; font-size: 0; overflow:hidden; height:30px; width:150px; padding: 0;}
 .sorter .grid,
 .sorter .list {display:block; float:left; background: url(../images/grid-list.gif) no-repeat left bottom; width: 17px; height: 16px; }
@@ -611,20 +632,19 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 .sorter strong.list {}
 .sorter a.list:hover {background-position: right bottom;}
 .sorter a.grid:hover {background-position: left top;}
-.sorter .sort-by { float:right; min-width:152px; }
+.sorter .sort-by {min-width:152px;}
 .sorter .sort-by select { margin-right:15px; }
-.sorter .sort-by label { display:inline-block; padding-top:2px; padding-right:6px; float:left;}
+.sorter .sort-by label {font-size:14px; letter-spacing:2px; font-weight:bold; color:black; display:inline-block; margin:0; padding-top:2px; padding-right:6px; float:left;}
 .sorter .link-feed {}
 
 /* Toolbar */
-.toolbar { margin-bottom: 30px;}
+.toolbar { margin-bottom: 30px;width: 100%;display: inline-block; border-bottom: 1px solid lightgrey; border-top: 1px solid lightgrey;}
 .toolbar select { min-width:63px;}
 .toolbar .pager {
-	border-bottom:1px solid #e5e5e5;
-	margin-bottom:10px;
-	padding:0 0 10px;
+    margin: 0px;
 }
 .toolbar .sorter {  padding: 0; }
+.toolbar-top,
 .toolbar-bottom { margin-top: 30px; }
 
 /* Data Table */
@@ -760,7 +780,7 @@ tr.summary-details-excluded { font-style:italic; }
 .header { padding:0; position:relative;}
 .header .header-border {
 	margin: 0 -10000px; 
-	padding:9px 10000px 10px;
+	padding:5px 10000px 5px;
 	box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.05) inset;
         background-color: #f0f0f0;
 }
