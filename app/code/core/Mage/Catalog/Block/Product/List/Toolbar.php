@@ -218,6 +218,8 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
      * @param Varien_Data_Collection $collection
      * @return Mage_Catalog_Block_Product_List_Toolbar
      */
+
+
     public function setCollection($collection)
     {
         $this->_collection = $collection;
@@ -230,7 +232,18 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
             $this->_collection->setPageSize($limit);
         }
         if ($this->getCurrentOrder()) {
-            $this->_collection->setOrder($this->getCurrentOrder(), $this->getCurrentDirection());
+          if(($this->getCurrentOrder())=='recentlyadded'){
+              $this->_collection->setOrder('entity_id',$this->getCurrentDirection());
+          }
+          else {
+           $this->_collection->setOrder($this->getCurrentOrder(),$this->getCurrentDirection());
+          }
+          if(($this->getCurrentOrder())=='bestselling'){
+              $this->_collection->setOrder('ordered_qty',$this->getCurrentDirection());
+          }
+          else {
+           $this->_collection->setOrder($this->getCurrentOrder(),$this->getCurrentDirection());
+          }
         }
         return $this;
     }
@@ -383,13 +396,20 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
      * @param string $field
      * @return Mage_Catalog_Block_Product_List_Toolbar
      */
-    public function setDefaultOrder($field)
-    {
-        if (isset($this->_availableOrder[$field])) {
-            $this->_orderField = $field;
-        }
-        return $this;
+ public function setDefaultOrder($field) {
+    if (isset($this->_availableOrder[$field])) {
+        $this->_availableOrder = array(
+
+            'bestselling'    => $this->__('Best Selling    '),
+            'recentlyadded'    => $this->__('Date    '),
+            'name'        => $this->__('Alphabetically            '),
+            'price'       => $this->__('Price    '),
+        );
+        $this->_orderField = $field;
     }
+
+    return $this;
+}
 
     /**
      * Set default sort direction

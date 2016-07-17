@@ -1094,13 +1094,17 @@
 }
 
 .camera_caption .camera-link {
+    font-family: "brandongrotesque-boldbook",sans-serif;
+    height: 44px;
+    text-transform: uppercase;
 	font-size: 13px;
 	line-height: 46px;
 	border-radius: 3px;
 	font-weight: bold;
 	display: inline-block;
 	color: #fff;
-	padding: 0 30px; 
+	padding: 0 30px;
+	margin-top: 10px;
 	background-color: rgba(0,0,0,0.4);
 }
 .camera_caption .camera-link:hover {background-color: #3498db;}
@@ -1140,6 +1144,8 @@
 .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent {background: #17bcb8; }
 
 .top_camera_info {
+    line-height: 1.6;
+    font-family: "museo_sans300",sans-serif;
     background-color: rgba(0,0,0,0.4);
     width: 500px;
     max-width: 400px;
@@ -1149,7 +1155,7 @@
     top: 25%;
     padding: 30px;
     margin-left: 10%;
-    font-size: 32px;
+    font-size: 30px;
     }
 .top_camera_info a {
     color:white;
@@ -1172,9 +1178,18 @@
 }
 
 @media only screen and (max-width: 1720px) {
-	.lof_camera_title {font-size: 25px; line-height: 25px;}
-	.lof_camera_title1 {font-size: 15px; line-height: 15px;}
- }
+	.lof_camera_title {font-family: "brandongrotesque-boldbook",sans-serif;
+                       font-weight: bold;
+                       margin: 0;
+                       font-size: 25px;
+                       line-height: 25px;
+                       }
+	.lof_camera_title1 {font-family: museo_sans300, sans-serif;
+                       font-size: 15px;
+                       line-height: 18px;
+                       font-style: italic;
+                       margin: 0;}
+                        }
 @media only screen and (max-width: 991px) {
     .top_camera_info {display:none;}
 }

@@ -205,7 +205,8 @@ ul.sf-menu li li li.sfHover ul {
     #menu-icon,
     .sf-menu-phone,
     .sf-menu-block {  display: none !important;}
-      .nav-container.fixed, .search-header.fixed { 
+      .nav-container.fixed, .search-header.fixed {
+        opacity: 0.96;
         position:fixed;  
         top:0;
       }

@@ -63,7 +63,7 @@
 			    <div class="left-header">
 				    <?php echo ($this->getLayout()->createBlock('cms/block')->setBlockId('header_info')->toHtml()); ?>
 				    <?php if(!Mage::getSingleton('customer/session')->isLoggedIn()):  ?>
-					<a href="<?php echo Mage::getUrl('customer/account/login'); ?>" title="Log In" onclick="return false;">Log In</a>
+					<a href="<?php echo Mage::getUrl('customer/account/login'); ?>" title="Login" onclick="return false;">Login</a>
 					<a href="<?php echo Mage::getUrl('customer/account/create'); ?>" title="Register">Register</a>
 				    <?php else:  ?>
 					<a href="<?php echo Mage::getUrl('customer/account'); ?>" title="Hello Customer" onclick="return true;">Hello <?php echo Mage::getSingleton('customer/session')->getCustomer()->getName(); ?></a>
