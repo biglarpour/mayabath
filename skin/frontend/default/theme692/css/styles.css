@@ -669,10 +669,16 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 .pager .limiter label {}
 .pager .limiter { float:right; min-width: 89px;  }
 .pager .limiter label{ display:inline-block; padding-top:2px; padding-right:6px; float:left;}
-.pager .pages { margin: 0 135px; }
 .pager .pages  strong { padding-right:3px;}
 .pager .pages ol { display:inline;  }
-.pager .pages li { display:inline; padding: 0; color:#737373; font-size:12px; line-height:15px; font-weight:bold; margin-right:3px; }
+.pager .pages li { display:inline;
+                   padding: 0;
+                   color:#737373;
+                   margin-right:3px;
+                   line-height: 1.42;
+                   font-weight: 400;
+                   font-size: 15px;
+                   font-family: "museo_sans300",sans-serif;}
 .pager .pages li a { text-decoration:none;  }
 .pager .pages .current {color:#3498db;}
 .pager ol > li:first-child > a {text-decoration:none;}
@@ -1552,14 +1558,28 @@ body.ps-static .wrapper-hover:hover .product-image {
 
 /******* Type: List and Grid ********/
 .products-grid .product-name ,
-.products-list .product-name { margin:0 0 15px;
-                               font-weight: 300;
-                               font-family: 'brandongrotesque-regularbook',sans-serif;
-                               font-style: normal;
-                               font-size: 17px;
-                               text-align: center;
-                               text-transform: capitalize; }
+.products-list .product-name {
+    margin:0 0 15px;
+    font-weight: 300;
+    font-family: 'brandongrotesque-regularbook',sans-serif;
+    font-style: normal;
+    font-size: 17px;
+    text-align: center;
+    text-transform: capitalize; }
 
+.category-products .products-list .product-name {
+    margin-bottom: 10px;
+    text-align: left;
+    display: inline-block;}
+.category-products .products-list .product-name a {
+    font-style: normal;
+    letter-spacing: 2px;
+    font-family: 'brandongrotesque-mediumbook',sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1;
+    text-transform: uppercase;
+    }
 
 .products-grid .product-name a,
 .products-list .product-name a {font-size: 14px; font-weight: bold; color: #303c4b;}
@@ -1594,14 +1614,17 @@ body.ps-static .wrapper-hover:hover .product-image {
 	padding:20px; 
 	margin-bottom: 30px;
 	position: relative; 
-	border: 1px solid #d1d0d0;
 }
 .products-list li.item.last {  }
-.products-list .product-image { float:left; width:160px; height:auto; margin-right:20px; border: 0;}
+.products-list .product-image { float: left;
+                                width: 40%;
+                                height: auto;
+                                padding-right: 30px;
+                                border: 0;}
 .products-list .product-shop { overflow:hidden; }
 .products-list .button{ }
 .products-list .product-name { }
-.products-list .price-box { color: #3A3A3A; margin: 12px 0; overflow: hidden; width: 100%;}
+.products-list .price-box { color: #3A3A3A; margin: 12px 10px; overflow: hidden; width: 100%;display: inline;}
 .products-list .price-box .regular-price{ float:left; padding-right:12px;}
 .products-list .availability { float:left; margin:3px 0 0; }
 .products-list .desc { clear:both; margin:0 0 15px; }
@@ -1611,7 +1634,7 @@ body.ps-static .wrapper-hover:hover .product-image {
 .products-list .add-to-links { padding-top:10px; float: none; }
 .products-list .add-to-links li:first-child { margin-right: 5px; }
 .products-list .ratings .rating-links {clear: left; padding-top: 5px;}
-.products-list .f-fix{ position:relative;}
+.products-list .f-fix{ position:relative; text-align: left;}
 .products-list .f-fix > span{left: 0;   position: absolute;   bottom:0px;}
 .products-list .list-btn { display:inline-block; float:left;}
 .list-reviews{ float:right; width:285px; text-align:right;}
@@ -1684,7 +1707,13 @@ body.ps-static .wrapper-hover:hover .product-image {
 .products-grid .old-price .price,
 .products-list .old-price .price,
 .block .old-price .price,
-#tabquickshowcontainer .old-price .price {font-size: 17px; line-height: 22px; color: #bfbfbf; font-weight: normal; }
+#tabquickshowcontainer .old-price .price {line-height: 1.4;
+                                          font-family: "brandongrotesque-lightbook",sans-serif;
+                                          letter-spacing: 1.5px;
+                                          font-size: 18px;
+                                          line-height: 22px;
+                                          color: #bfbfbf;
+                                          font-weight: normal; }
 
 .products-grid .special-price .price,
 .products-list .special-price .price,
@@ -1706,12 +1735,12 @@ body.ps-static .wrapper-hover:hover .product-image {
 
 
 /* Old price */
-.old-price { }
+.old-price {display: inline-block;margin-right:10px; }
 .old-price .price-label { font-weight:bold; white-space:nowrap; }
 .old-price .price { font-weight:bold; text-decoration:line-through; }
 
 /* Special price */
-.special-price {}
+.special-price {display: inline-block;}
 .special-price .price-label { font-weight:bold; }
 .special-price .price { font-weight:bold; }
 
@@ -4100,6 +4129,11 @@ button.button > span,
     font-family: "museo_sans300",sans-serif;
     color: #272727;
     font-weight: 400;
+}
+
+.product-title {
+    margin-bottom:15px;
+    border-bottom: 1px solid lightgrey;
 }
 
 .sort-by .fa-arrow-up {
