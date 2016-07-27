@@ -78,16 +78,15 @@ $_helper = $this->helper('catalog/output');
                         // Provides extra blocks on which to hang some features for products in the list
                         // Features providing UI elements targeting this block will display directly below the product name
                         if ($this->getChild('name.after')) {
-                        $_nameAfterChildren = $this->getChild('name.after')->getSortedChildren();
-                        foreach ($_nameAfterChildren as $_nameAfterChildName) {
-                        $_nameAfterChild = $this->getChild('name.after')->getChild($_nameAfterChildName);
-                        $_nameAfterChild->setProduct($_product);
-                        echo $_nameAfterChild->toHtml();
-                        }
-                        }
-                        ?>
+                            $_nameAfterChildren = $this->getChild('name.after')->getSortedChildren();
+                            foreach ($_nameAfterChildren as $_nameAfterChildName) {
+                                $_nameAfterChild = $this->getChild('name.after')->getChild($_nameAfterChildName);
+                                $_nameAfterChild->setProduct($_product);
+                                echo $_nameAfterChild->toHtml();
+                                }
+                            }?>
                     </div>
-                    <div class="product-secondary">
+                    <!--<div class="product-secondary">
                         <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
                         <p class="action"><button type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
                         <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
@@ -103,14 +102,17 @@ $_helper = $this->helper('catalog/output');
                             <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
                             <?php endif; ?>
                         </ul>
-                    </div>
+                    </div>-->
                     <div class="desc std">
                         <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
-                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
+                    </div>
+                    <div class="prod-list-view-detail">
+                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('View Details') ?></a>
                     </div>
                 </div>
             </div>
         </li>
+        <hr>
         <?php endforeach; ?>
     </ol>
     <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>

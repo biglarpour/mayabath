@@ -1627,7 +1627,13 @@ body.ps-static .wrapper-hover:hover .product-image {
 .products-list .price-box { color: #3A3A3A; margin: 12px 10px; overflow: hidden; width: 100%;display: inline;}
 .products-list .price-box .regular-price{ float:left; padding-right:12px;}
 .products-list .availability { float:left; margin:3px 0 0; }
-.products-list .desc { clear:both; margin:0 0 15px; }
+.products-list .desc {     font-family: museo_sans100, sans-serif;
+                           -webkit-font-smoothing: antialiased;
+                           font-size: 22px;
+                           color: #333;
+                           font-weight: normal;
+                           clear: both;
+                           margin: 0 0 20px; }
 .products-list .desc > p{ float:left;}
 .products-list .desc > p strong{ color:#3498db;}
 .products-list .desc .link-learn { font-weight:bold; text-decoration:underline;}
@@ -1707,21 +1713,27 @@ body.ps-static .wrapper-hover:hover .product-image {
 .products-grid .old-price .price,
 .products-list .old-price .price,
 .block .old-price .price,
-#tabquickshowcontainer .old-price .price {line-height: 1.4;
+#tabquickshowcontainer .old-price .price {
+                                          line-height: 1.4;
                                           font-family: "brandongrotesque-lightbook",sans-serif;
-                                          letter-spacing: 1.5px;
+                                          letter-spacing: 2px;
                                           font-size: 18px;
-                                          line-height: 22px;
-                                          color: #bfbfbf;
-                                          font-weight: normal; }
+                                          color: grey;
+                                          font-weight: normal;
+                                          }
 
 .products-grid .special-price .price,
 .products-list .special-price .price,
 .block .special-price .price,
 #tabquickshowcontainer .special-price .price  {
-	font-size: 22px; 
-	color: #3498db;
-	line-height: 22px;
+    font-weight: normal;
+    font-size: 25px;
+    display: inline-block;
+    color: #3498DB;
+    line-height: 1.4;
+    font-family: "brandongrotesque-lightbook",sans-serif;
+    letter-spacing: 2px;
+    padding-bottom: 5px;
 }
 .products-grid .price-box > p { display: inline-block;}
 .products-grid .price-box > p.special-price {float: left; margin-right: 5px;}
@@ -3942,7 +3954,6 @@ button.button > span,
 }
 
 .swatch-link {
-  border: 1px solid #cccccc;
   margin: 0 0 3px;
 }
 .swatch-link img {
@@ -3964,7 +3975,15 @@ button.button > span,
   z-index: 10;
 }
 .swatch-link.has-image .swatch-label {
-  position: relative;
+    border-radius: 4px;
+    float: left;
+    border: 3px solid #eaeaea;
+    background-color: white;
+    font-size: 13px;
+    text-align: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+    position: relative;
 }
 .swatch-link.has-image img {
   position: absolute;
@@ -3973,22 +3992,19 @@ button.button > span,
 }
 
 .swatch-label {
-  border: 1px solid #fff;
   margin: 0;
   white-space: nowrap;
   background: #f4f4f4;
 }
 
 .configurable-swatch-list {
-  margin-left: -3px;
   zoom: 1;
   clear: both;
   -webkit-transform: translateZ(0px);
 }
 .configurable-swatch-list li {
-  float: left;
-  zoom: 1;
-  margin: 0 0 0 3px;
+    display: inline-block;
+    margin-right: 10px;
 }
 .products-grid .configurable-swatch-list li {
   display: inline-block;
@@ -4149,6 +4165,63 @@ button.button > span,
 	padding-bottom: 60px;
 }
 
+
+.swatch-title-img,
+.swatch-title
+{
+    position: relative;
+    margin-right: 20px;
+    width: 100px;
+    text-transform: uppercase;
+    font-family: museo_sans300, sans-serif;
+    color: #333;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: bold;
+    top: -15px;
+    display: inline-block;
+}
+
+.swatch-title {
+    top: 0;
+}
+
+.swatch-list-items {
+    display:inline-block;
+}
+
+.prod-list-view-detail {
+    background-color: #3498DB;
+    text-transform: uppercase;
+    width: 35%;
+    float: right;
+    height: 56px;
+    text-align: center;
+    line-height: 58px;
+    padding: 0;
+    font-size: 20px;
+    font-family: "museo_sans100", sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    border-radius: 5px;
+}
+
+.prod-list-view-detail a {
+    color: white;
+}
+
+
+.toolbar-bottom .pager {
+    float: none;
+}
+
+.toolbar-bottom .sorter {
+    display: none;
+}
+
+.toolbar-bottom .toolbar {
+    border: none;
+}
 
 /* Media queries for responsive */
 

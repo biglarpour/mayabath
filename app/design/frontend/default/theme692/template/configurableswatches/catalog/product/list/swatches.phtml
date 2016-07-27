@@ -28,7 +28,7 @@
 $_product = $this->getProduct();
 
 if (Mage::helper('configurableswatches')->isEnabled() && $_product && $_product->getId()
-    && ($_attrValues = $_product->getListSwatchAttrValues()) && count($_attrValues) > 0):
+    && ($_attrValues = $_product->getListSwatchAttrValues()) && count($_attrValues) > 1):
 
     $_swatchAttribute = Mage::helper('configurableswatches/productlist')->getSwatchAttribute();
 
@@ -39,6 +39,10 @@ if (Mage::helper('configurableswatches')->isEnabled() && $_product && $_product-
     $_swatchOuterHeight = $_dimHelper->getOuterHeight(Mage_ConfigurableSwatches_Helper_Swatchdimensions::AREA_LISTING);
 ?>
 <ul class="configurable-swatch-list configurable-swatch-<?php echo $_swatchAttribute->getAttributeCode() ?> clearfix">
+    <?php $_swatchLabel = $_swatchAttribute->getName(); ?>
+    <div class="swatch-title-img">
+        <span><?php echo $_swatchLabel; ?></span>
+    </div>
     <?php foreach ($_attrValues as $_optionValue => $_optionLabel): ?>
         <?php
         $_optionCode = Mage::helper('configurableswatches')->getHyphenatedString($_optionLabel);
@@ -46,6 +50,7 @@ if (Mage::helper('configurableswatches')->isEnabled() && $_product && $_product-
         $_hasImage = !empty($_swatchUrl);
         $_liClasses = array();
         $_aClass = 'swatch-link swatch-link-' . $_swatchAttribute->getId();
+
         if ($_hasImage) {
             if ($_swatchType == 'media') {
                 $_liClasses[] = 'is-media';
@@ -60,16 +65,18 @@ if (Mage::helper('configurableswatches')->isEnabled() && $_product && $_product-
         $_liClass = (!empty($_liClasses)) ? ' ' . implode(' ', $_liClasses) : '';
         ?>
     <li class="option-<?php echo $_optionCode; ?><?php echo $_liClass; ?>" data-product-id="<?php echo $_product->getId() ?>" data-option-label="<?php echo $_optionLabel ?>">
-        <a href="javascript:void(0)" name="<?php echo $_optionCode; ?>" class="<?php echo $_aClass ?>" title="<?php echo $_optionLabel; ?>"
-               style="height: <?php echo $_swatchOuterHeight ?>px; <?php if (!$_hasImage): ?>min-<?php endif; ?>width: <?php echo $_swatchOuterWidth ?>px;">
-            <span class="swatch-label" style="height: <?php echo $_swatchInnerHeight ?>px; <?php if (!$_hasImage): ?>min-<?php endif; ?>width: <?php echo $_swatchInnerWidth ?>px; line-height: <?php echo $_swatchInnerHeight ?>px;">
-            <?php if ($_hasImage): ?>
-                <img src="<?php echo $_swatchUrl; ?>" alt="<?php echo $_optionLabel; ?>" width="<?php echo $_swatchInnerWidth ?>" height="<?php echo $_swatchInnerHeight ?>" />
-            <?php else: ?>
-                <?php echo $_optionLabel; ?>
-            <?php endif; ?>
-             </span>
-        </a>
+        <div class="swatch-list-items">
+            <a href="javascript:void(0)" name="<?php echo $_optionCode; ?>" class="<?php echo $_aClass ?>" title="<?php echo $_optionLabel; ?>"
+                   style="height: <?php echo $_swatchOuterHeight ?>px; <?php if (!$_hasImage): ?>min-<?php endif; ?>width: <?php echo $_swatchOuterWidth ?>px;">
+                <span class="swatch-label" style="height: <?php echo $_swatchInnerHeight ?>px; <?php if (!$_hasImage): ?>min-<?php endif; ?>width: <?php echo $_swatchInnerWidth ?>px; line-height: <?php echo $_swatchInnerHeight ?>px;">
+                <?php if ($_hasImage): ?>
+                    <img src="<?php echo $_swatchUrl; ?>" alt="<?php echo $_optionLabel; ?>" width="<?php echo $_swatchInnerWidth ?>" height="<?php echo $_swatchInnerHeight ?>" />
+                <?php else: ?>
+                    <?php echo $_optionLabel; ?>
+                <?php endif; ?>
+                 </span>
+            </a>
+        </div>
     </li>
     <?php endforeach; ?>
 </ul>
