@@ -361,6 +361,7 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
         <?php else: // excl. ?>
             <p class="old-price">
                 <span class="price-label"><?php echo $this->__('Regular Price:') ?></span>
+                <span class="product-price-seperator">-</span>
                 <span class="price" id="old-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
                     <?php echo $_coreHelper->formatPrice($_regularPrice, false) ?>
                 </span>
@@ -387,8 +388,13 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
             <?php else: ?>
                 <p class="special-price">
                     <span class="price-label"><?php echo $_specialPriceStoreLabel ?></span>
+                <span class="product-price-seperator">-</span>
                 <span class="price" itemprop="price" id="product-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
                     <?php echo $_coreHelper->formatPrice($_finalPrice, false) ?>
+                </span>
+                <span class="product-price-seperator">-</span>
+                <span class="price-difference" itemprop="price" id="price-difference-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
+                    You Save <?php echo $_coreHelper->formatPrice($_regularPrice - $_finalPrice, false) ?>
                 </span>
                 </p>
             <?php endif; ?>

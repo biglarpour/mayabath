@@ -1747,7 +1747,7 @@ body.ps-static .wrapper-hover:hover .product-image {
 
 
 /* Old price */
-.old-price {display: inline-block;margin-right:10px; }
+.old-price {display: inline-block; }
 .old-price .price-label { font-weight:bold; white-space:nowrap; }
 .old-price .price { font-weight:bold; text-decoration:line-through; }
 
@@ -4258,6 +4258,23 @@ button.button > span,
     border: none;
 }
 
+.price-difference {
+    font-family: museo_sans300, sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    border-radius: 3px;
+    vertical-align: text-bottom;
+    color: #848484;
+}
+
+.product-price-seperator {
+    font-family: 'brandongrotesque-mediumbook',sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0 3px;
+}
+}
 /* Media queries for responsive */
 
 @media only screen and (max-width: 767px) {
