@@ -75,6 +75,18 @@ $_helper = $this->helper('catalog/output');
                         <?php echo $this->getReviewsSummaryHtml($_product) ?>
                         <?php endif; ?>
                         <?php
+                        // check to see if product has size and display once
+                        $configurable= Mage::getModel('catalog/product_type_configurable')->setProduct($_product);
+                        $simpleCollection = $configurable->getUsedProductCollection()->addAttributeToSelect('*')->addFilterByRequiredOptions();
+                        $oneSize = false;
+                        foreach($simpleCollection as $simple){
+                            $attributes = $simple->getAttributes();
+                            foreach ($attributes as $attribute) {
+                                if ($attribute->getName() == "size" and $oneSize == 0) {
+                                    $oneSize = $attribute->getFrontend()->getValue($simple);
+                                }
+                            }
+                        }
                         // Provides extra blocks on which to hang some features for products in the list
                         // Features providing UI elements targeting this block will display directly below the product name
                         if ($this->getChild('name.after')) {
@@ -86,28 +98,32 @@ $_helper = $this->helper('catalog/output');
                                 }
                             }?>
                     </div>
-                    <!--<div class="product-secondary">
-                        <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
-                        <p class="action"><button type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
-                        <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
-                        <p class="action"><a title="<?php echo $this->quoteEscape($this->__('View Details')) ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a></p>
-                        <?php else: ?>
-                        <p class="action availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
-                        <?php endif; ?>
-                        <ul class="add-to-links">
-                            <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                            <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
-                            <?php endif; ?>
-                            <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
-                            <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
-                            <?php endif; ?>
-                        </ul>
-                    </div>-->
+                    <?php if($oneSize != false): ?>
+                    <div class="product_size">
+                        <span class="product_size_title">
+                            SIZE
+                        </span>
+                        <span class="product_size_value">
+                            <?php echo $oneSize; ?>
+                        </span>
+                    </div>
+                    <?php endif; ?>
                     <div class="desc std">
                         <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
                     </div>
-                    <div class="prod-list-view-detail">
-                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('View Details') ?></a>
+                    <div class="prod-list-details">
+                        <div class="prod-availability">
+                            <?php if ($_product->isSaleable()): ?>
+                                <img src="<?php echo $this->getSkinUrl('images/check.png') ?>" width="20px" height="20px">
+                                <span class="prod-list-avail-val" style="margin-right: 10px">IN STOCK</span>
+                                <span class="prod-list-ships">Ships within 48 hours</span>
+                            <?php else: ?>
+                                <span class="prod-list-avail-val" style="margin-right: 10px">OUT OF STOCK</span>
+                            <?php endif; ?>
+                        </div>
+                        <div class="prod-list-view-detail">
+                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('View Details') ?></a>
+                        </div>
                     </div>
                 </div>
             </div>

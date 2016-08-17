@@ -4167,7 +4167,8 @@ button.button > span,
 
 
 .swatch-title-img,
-.swatch-title
+.swatch-title,
+.product_size_title
 {
     position: relative;
     margin-right: 20px;
@@ -4182,8 +4183,21 @@ button.button > span,
     display: inline-block;
 }
 
+.product_size_title {
+    top : 0;
+}
+
+.product_size_value {
+    color: #333;
+    font-family: museo_sans100, sans-serif;
+    font-size: 18px;
+}
 .swatch-title {
     top: 0;
+}
+
+.product_size {
+    margin: 10px 0 15px 0;
 }
 
 .swatch-list-items {
@@ -4195,6 +4209,7 @@ button.button > span,
     text-transform: uppercase;
     width: 35%;
     float: right;
+    display : inline-block;
     height: 56px;
     text-align: center;
     line-height: 58px;
@@ -4210,6 +4225,26 @@ button.button > span,
     color: white;
 }
 
+.prod-availability {
+    display : inline-block;
+    margin-top: 15px;
+}
+
+.prod-list-avail-val{
+    font-size: 15px;
+    line-height: 1.6;
+    font-family: "museo_sans300",sans-serif;
+    color: #272727;
+    font-weight: 400;
+}
+
+
+.prod-list-ships {
+    font-size: 12px;
+    margin: 0;
+    color: #848484;
+    font-family: "museo_sans300",sans-serif;
+}
 
 .toolbar-bottom .pager {
     float: none;
