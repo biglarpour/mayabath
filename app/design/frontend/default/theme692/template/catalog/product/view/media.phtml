@@ -36,41 +36,37 @@
     $_product = $this->getProduct();
     $_helper = $this->helper('catalog/output');
 ?>
-<div class="product-image product-image-zoom">
-    <div class="product-image-gallery">
-        <img id="image-main"
-             class="gallery-image visible"
-             src="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>"
-             alt="<?php echo $this->escapeHtml($this->getImageLabel()) ?>"
-             title="<?php echo $this->escapeHtml($this->getImageLabel()); ?>" />
-
-        <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
-            <?php if ($this->isGalleryImageVisible($_image)): ?>
-            <img id="image-<?php echo $i; ?>"
-                 class="gallery-image"
-                 src="<?php echo $this->getGalleryImageUrl($_image); ?>"
-                 data-zoom-image="<?php echo  $this->getGalleryImageUrl($_image); ?>" />
-            <?php endif; ?>
-        <?php $i++; endforeach; ?>
-    </div>
-</div>
-
 <?php if (count($this->getGalleryImages()) > 0): ?>
 <div class="more-views">
     <h2><?php echo $this->__('More Views') ?></h2>
-    <ul class="product-image-thumbs">
-    <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
-        <?php if ($this->isGalleryImageVisible($_image)): ?>
-        <li>
+    <ul id="prod-thumb" class="product-image owl-carousel owl-theme">
+        <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
+        <?php
+        if (($filterClass = $this->getGalleryFilterHelper()) && ($filterMethod = $this->getGalleryFilterMethod()) && !Mage::helper($filterClass)->$filterMethod($_product, $_image)):
+        continue;
+        endif;
+        ?>
+        <li class="item">
             <a class="thumb-link" href="#" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>" data-image-index="<?php echo $i; ?>">
-                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(75); ?>"
-                     width="75" height="75" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" />
+                <img id="product-collection-image-<?php echo $i; ?>"
+                     class="gallery-image"
+                     src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'small_image', $_image->getFile())->resize(800); ?>"
+                     width="800" height="800" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" />
             </a>
         </li>
-        <?php endif; ?>
-    <?php $i++; endforeach; ?>
+        <?php $i++; endforeach; ?>
     </ul>
 </div>
 <?php endif; ?>
+<script>
+jQuery(document).ready(function() {
+  jQuery("#prod-thumb").owlCarousel({
+    items : 1,
+    lazyLoad : true,
+    navigation : false,
+    pagination: true
+  });
 
-<?php echo $this->getChildHtml('after'); ?>
+});
+</script>
+<!--<?php echo $this->getChildHtml('after'); ?>-->

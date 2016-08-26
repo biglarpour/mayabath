@@ -1304,6 +1304,15 @@ var ProductMediaManager = {
     }
 };
 
+// ProductMediaManager is outside document.read scope
+if (typeof ProductMediaManager !== 'undefined') {
+
+  // Override image zoom in /skin/frontend/rwd/default/js/app.js
+  // and prevent the zooming of images on hover
+  ProductMediaManager.createZoom = function(image) { return; }
+
+}
+
 $j(document).ready(function() {
     ProductMediaManager.init();
 });

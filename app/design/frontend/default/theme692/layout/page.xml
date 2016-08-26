@@ -73,6 +73,7 @@ Default layout, loads most of the pages
                 <action method="addItem"><type>skin_js</type><name>js/TweenMax.min.js</name><params/></action>
                 <action method="addItem"><type>skin_js</type><name>js/jquery.scrollmagic.min.js</name><params/></action>
                 <action method="addItem"><type>skin_js</type><name>js/camera.js</name><params/></action>
+                <action method="addItem"><type>skin_js</type><name>js/owl.carousel.js</name><params/></action>
                 <action method="addItem"><type>skin_js</type><name>js/smoothing-scroll.js</name><params/></action>
                 <action method="addItem"><type>skin_js</type><name>js/superfish.js</name><params/></action>
                 <action method="addItem"><type>skin_js</type><name>js/scripts.js</name><params/></action>
@@ -92,6 +93,8 @@ Default layout, loads most of the pages
                 <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/responsive.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/camera.css</stylesheet></action>
+                <action method="addCss"><stylesheet>css/owl.carousel.css</stylesheet></action>
+                <action method="addCss"><stylesheet>css/owl.theme.css</stylesheet></action>
                 <action method="addItem"><type>skin_css</type><name>css/styles-ie.css</name><params/><if>lt IE 8</if></action>
 				<action method="addCss"><stylesheet>css/superfish.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/widgets.css</stylesheet></action>
