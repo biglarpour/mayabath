@@ -51,17 +51,13 @@
         <div class="product-shop">
             <div class="product-name">
                 <h1 itemprop="name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+                <?php echo $this->getChildHtml('product_type_data') ?>
+                <?php echo $this->getTierPriceHtml() ?>
             </div>
-            <?php if ($this->displayProductStockStatus()): ?>
-                <?php if ($_product->isAvailable()): ?>
-                    <p class="availability in-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('In stock') ?></span></p>
-                <?php else: ?>
-                    <p class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('Out of stock') ?></span></p>
-                <?php endif; ?>
-            <?php endif; ?> 
-            <?php echo $this->getChildHtml('product_type_data') ?>
-            <?php echo $this->getTierPriceHtml() ?>
             <div class="clear"></div>
+            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+            <?php endif;?>
             <?php if ($_product->getShortDescription()):?>
                 <div class="short-description">
                     <h2><?php echo $this->__('Quick Overview') ?></h2>
@@ -71,7 +67,7 @@
             <div class="clear"></div>
             <?php echo $this->getChildHtml('extrahint') ?>
 
-            <?php if (!$this->hasOptions()):?>
+        <!--<?php if (!$this->hasOptions()):?>
                 <div class="add-to-box">
                     <?php if($_product->isSaleable()): ?>
                         <?php echo $this->getChildHtml('addtocart') ?>
@@ -87,11 +83,8 @@
                     <?php echo $this->getChildHtml('addto') ?>
                 </div>
             <?php endif; ?>
+            <?php echo $this->getChildHtml('other');?>-->
 
-            <?php echo $this->getChildHtml('other');?>
-            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-            <?php endif;?>
             <div class="row-product">
                 <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
                 
