@@ -1826,7 +1826,19 @@ body.ps-static .wrapper-hover:hover .product-image {
 .add-to-cart .qty-block { float:left; padding-top:0; }
 .add-to-cart label { margin-right: 7px; color:#3a3a3a; }
 .add-to-cart .qty {  font-size:12px; text-align:center; padding: 3px 6px 4px 7px; background: #fff; line-height: 24px; }
-.add-to-cart button.button { float:right; margin-left:5px; }
+.add-to-cart button.button {    float:left; margin-left:5px;
+                                background-color: #3498DB;
+                                text-transform: uppercase;
+                                width: 35%;
+                                height: 56px;
+                                line-height: 58px;
+                                padding: 0;
+                                font-size: 20px;
+                                font-family: "museo_sans100", sans-serif;
+                                font-style: normal;
+                                font-weight: 100;
+                                border-radius: 5px;}
+.add-to-cart button.button span {background: none;}
 .add-to-cart .paypal-logo { clear:left; text-align:right; }
 .add-to-cart .paypal-logo .paypal-or { clear:both; display:block; margin:5px 46px 5px 0; }
 .product-view .add-to-cart .paypal-logo { margin:0; display:none; }
@@ -1967,7 +1979,12 @@ body.ps-static .wrapper-hover:hover .product-image {
 .product-view .product-name { margin-bottom:20px; float: left;}
 .product-view .short-description { margin-bottom:13px; float: left; text-align: left; }
 .product-view .short-description h2 { display:none;}
-.product-view .short-description .std {}
+.product-view .short-description .std {color: #272727;
+                                       font-weight: 400;
+                                       line-height: 1.6;
+                                       font-size: 22px;
+                                       font-family: museo_sans100, sans-serif;
+                                       }
 .product-view .product-shop .product-pricing {margin-bottom:15px; overflow:hidden;}
 .product-view .product-shop .product-pricing li {background:#f4f4f4; float:left; clear:left; line-height:22px; padding:0 13px; font-size:11px; margin-bottom:3px; }
 .product-view .product-shop .product-pricing li .benefit {}
@@ -2007,7 +2024,9 @@ body.ps-static .wrapper-hover:hover .product-image {
 	margin-bottom: 0;
 }
 .product-options .qty-holder { display:block; padding-top:10px; }
-.product-options dl dt{ display:inline-block;
+.product-options dl dt{ position: relative;
+                        top: -20px;
+                        display:inline-block;
                         font-size: 15px;
                         line-height: 1.6;
                         font-family: "museo_sans300",sans-serif;
@@ -2017,7 +2036,7 @@ body.ps-static .wrapper-hover:hover .product-image {
                         text-transform: uppercase;
                         font-weight: bold;}
 .product-options dt label { font-weight:bold; display:inline-block;  padding-bottom:3px; }
-.product-options dt label em { float:right; color:#e03b3b;}
+.product-options dt label em {display:none; float:right; color:#e03b3b;}
 .product-options dt .qty-holder { float:right; }
 .product-options dt .qty-holder label { vertical-align:middle; }
 .product-options dt .qty-disabled { background:none; border:0; padding:3px;  }
@@ -2038,10 +2057,10 @@ body.ps-static .wrapper-hover:hover .product-image {
 .product-options .options-list input.checkbox { float:left; margin:3px -20px 0 0; height: auto; }
 .product-options .options-list .label { display:block; margin-left:20px; }
 .product-options ul.validation-failed { padding:0 7px; }
-.product-options p.required { padding:5px 0 0; overflow:hidden; width:100%; text-align:left; font-size:12px; color:#e03b3b; }
+.product-options p.required { display:none; padding:5px 0 0; overflow:hidden; width:100%; text-align:left; font-size:12px; color:#e03b3b; }
 .product-shop { position:relative; }
 .product-shop .price-box.map-info a {float:none; clear:left; padding:0 !important; margin-bottom:3px;}
-.product-shop .add-to-cart {border-top:1px solid #e5e5e5; width:100%; padding:10px 0;}
+.product-shop .add-to-cart {width:100%; padding:10px 0;}
 .product-shop .add-to-cart button.button > span	{ font-size:18px; padding: 0 6px;  }
 .ajaxcartmsg .product-shop .add-to-cart button.button > span {padding: 0; font-size: inherit; line-height: normal; }
 .ajaxcartmsg .product-view .add-to-cart .qty-block {margin-top: 0;}
