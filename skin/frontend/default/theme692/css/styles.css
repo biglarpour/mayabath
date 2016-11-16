@@ -4315,6 +4315,45 @@ button.button > span,
     text-align: left;
 }
 
+#product_detail_pics {
+    line-height: 0;
+    padding: 0;
+    width: auto;
+    overflow: hidden;
+    margin: 0 -30px;
+    display: block;
+    text-align: center;
+}
+
+#product_detail_pics .product_detail_pic_wrapper {
+    max-height: 20vw;
+    display: inline-block;
+    width: 33.333%;
+    overflow: hidden;
+}
+
+#product_detail_pics img {
+    width: 100%;
+    border: 1px solid black;
+}
+
+div[id^="product_detail_"], div[id*=" product_detail_"] h3 {
+display: inline-block;
+    font-family: museo_sans100, sans-serif;
+    font-size: 22px;
+    color: #000;
+}
+
+#product_detail_description {
+    text-align: left;
+}
+
+#product_detail_description strong{
+    font-weight: bold;
+}
+
+
+
 /* Media queries for responsive */
 
 @media only screen and (max-width: 767px) {
