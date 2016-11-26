@@ -179,4 +179,29 @@
         <?php endif; ?>
     </div>
 </div>
+<script type="text/javascript">
+        function getElementByXpath(path) {
+              var links = new Array();
+              var elements = 0;
+              var xPathRes = document.evaluate (path, document, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+              var actualSpan = xPathRes.iterateNext ();
+              while (actualSpan) {
+                links[elements] = actualSpan;
+                actualSpan = xPathRes.iterateNext ();
+                ++elements;
+              }
+              return(links);
+            }
+        function codeAddress() {
+            var element_array = getElementByXpath("//div[contains(@id, 'product_detail_')]");
+            var results = []
+            for (var i = 0; i < element_array.length; i = i+2) {
+                results.push(element_array[i]);
+            };
+            for (var i = 0; i < results.length; i++) {
+                results[i].className += "prod_detail_bg";
+            };
+        }
+        codeAddress();
+</script>
 <?php echo $this->getChildHtml('upsell_products') ?>

@@ -99,7 +99,7 @@ body          {
 
 
 #product_description_extras h3 {
-    font-family: 'brandongrotesque-mediumbook',sans-serif;
+    font-family: 'brandongrotesque-boldbook',sans-serif;
     font-size: 22px;
     color: #000;
     text-align: center;
@@ -1841,7 +1841,6 @@ body.ps-static .wrapper-hover:hover .product-image {
 .add-to-cart button.button {    float:left; margin-left:5px;
                                 background-color: #3498DB;
                                 text-transform: uppercase;
-                                width: 35%;
                                 height: 56px;
                                 line-height: 58px;
                                 padding: 0;
@@ -1901,9 +1900,9 @@ body.ps-static .wrapper-hover:hover .product-image {
 	line-height:21px;
 	color:#000;
 	margin-bottom: 20px;
+	font-family: "brandongrotesque-boldbook",sans-serif;
 	font-weight: bold;
 	position:relative;
-	border-bottom: 4px solid #000;
 	padding-bottom: 10px;
 }
 .tt{ display:block;}
@@ -4375,6 +4374,15 @@ div[id^="product_detail_"], div[id*=" product_detail_"] {
     float: none;
 }
 
+.prod_detail_bg {
+    background: #fafafa;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+
+#select_label_color {
+    display: none;
+}
 
 #product_detail_youtube iframe {
 }
