@@ -107,19 +107,8 @@ class Cmsmart_AjaxCart_IndexController extends Mage_Core_Controller_Front_Action
 		// Show the message add to cart is success 			
 		if(@$product) $json_encode['ajaxcontinue'] = '
 		<div>
-			<ul class="messages ajaxcart-messages">
-				<li class="success-msg">
-					<ul>
-						<li><span><a title="'.@$product->getName().'" href="'.@$product->getProductUrl().'">'.@$product->getName().' </a> '.$this->__('has been added to cart').'.</span></li>
-						<li><button onclick="setLocation(\''.Mage::getBaseUrl().'checkout/\')" class="button btn-continue" title="'.$this->__('Checkout').'" type="button"><span><span>'.$this->__('Checkout').'</span></span></button>
-					</ul>
-				</li>
-			</ul>
 		</div>';
-		//<button class="button btn-continue closemsg" title="Continue Shopping" type="button"><span><span>Continue Shopping</span></span></button>
-			//<button onclick="setLocation(\''.Mage::getBaseUrl().'checkout/onepage/\')" class="button btn-continue" title="'.$this->__('Proceed to Checkout').'" type="button"><span><span>'.$this->__('Proceed to Checkout').'</span></span></button>
-	
-		// Drop Down Cart Block 
+		// Drop Down Cart Block
 			$block = $this->getLayout()->createBlock('checkout/cart_sidebar')->setBlockId('block-id-in-magento')->setTemplate('checkout/cart/sidebar.phtml');
 			//$this->getLayout()->getBlock('content')->append($block);
 			$count = Mage::helper('checkout/cart')->getSummaryCount();

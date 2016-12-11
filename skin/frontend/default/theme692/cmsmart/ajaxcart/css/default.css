@@ -200,7 +200,7 @@ div#ajaxcart .truncated:hover .item-options { top:auto; left:auto; }
 	 position:relative;
 }
 .ajaxcart .mini-products-list li.item:first-child {border-top:1px solid #ececec; }
-.ajaxcart .mini-products-list .product-image { width:67px; }
+.ajaxcart .mini-products-list .product-image { width:auto; }
 .ajaxcart .mini-products-list .product-details { margin: 0 0 0 80px; overflow: inherit;}
 .ajaxcart .mini-products-list .qtyinput {margin-bottom: 5px;}
 .ajaxcart .mini-products-list .product-name{ padding:0px ; margin: 0 0 5px; width:95% !important; overflow: inherit; }

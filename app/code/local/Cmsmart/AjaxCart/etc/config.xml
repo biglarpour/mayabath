@@ -139,7 +139,7 @@
                 <border_color>DDDDDD</border_color>
                 <enableicon>0</enableicon>
 				<carticon>cart.png</carticon>
-				<boxshadow>0 0 3px #DDDDDD</boxshadow>
+				<boxshadow>6px 10px 25px 10px rgba(0,0,0,0.75)</boxshadow>
 				<themeoptions>default</themeoptions>
             </viewsetting>
 			
