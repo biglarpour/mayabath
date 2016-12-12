@@ -17,8 +17,6 @@ p {margin: 0;}
 .main-container .radio, .main-container .checkbox {display: inline-block; margin-top: 0;}
 @media (min-width: 1450px) { 
    .container {
-    max-width: 1450px;
-    width: 1450px;
   }
 }
 @media only screen and (min-width: 768px) {

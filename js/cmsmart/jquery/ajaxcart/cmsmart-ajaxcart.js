@@ -52,6 +52,7 @@ jQuery(function($) {
 	linkcart.mouseover(function(e) {
 		if($("#ajaxcart").css('display') == 'block' && hoveritem == 1) return;
 		$("#ajaxcart").css('position', 'fixed');
+		$("#ajaxcart").css('width', '35%');
 		hoveritem = 1;
 		$('.upajax ').hide();
 		$('.upajax ', prajax).show();
@@ -410,8 +411,10 @@ jQuery(function($) {
 		//linkcart.mouseover();
 		if(ajSi == 0){
 			// $(window).scrollTop(50);
-			linkcart.mouseover();
-			$("#ajaxcart").show();
+//			linkcart.mouseover();
+//			$("#ajaxcart").show();
+            var BASE_URL=baseUrlAjax + 'checkout/cart/';
+            window.location.href = BASE_URL;
 		}
 	} 	
 	//auto set middle position for html object 

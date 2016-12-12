@@ -26,7 +26,7 @@ div.ajaxcartanimate{ position:absolute; z-index:999990; width:100px; height:100p
 }
 
 #ajaxcartloading {
-	background-color: #fe6868;
+	background-color: #3498DB;
     display: none;
     height: 5px;
     left: 0 !important;

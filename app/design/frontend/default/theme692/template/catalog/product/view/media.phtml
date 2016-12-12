@@ -88,6 +88,17 @@ jQuery(document).ready(function() {
 
           }
         });
-    })
-</script>
+      function _x(STR_XPATH) {
+            var xresult = document.evaluate(STR_XPATH, document, null, XPathResult.ANY_TYPE, null);
+            var xnodes = [];
+            var xres;
+            while (xres = xresult.iterateNext()) {
+                xnodes.push(xres);
+            }
+
+            return xnodes;
+        };
+
+      $(_x('//div[@class="config_swatch"]/dd/div[@class="input-box"]/ul/li'))
+    });
 <!--<?php echo $this->getChildHtml('after'); ?>-->
