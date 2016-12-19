@@ -51,45 +51,47 @@
 </div>
 
 <div class="header-container">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-                <div class="header">
-                        <div class="header-border">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="header">
+                    <div class="header-border">
+                        <div class="header-wrapper" >
                             <div class="header-buttons">
                                 <?php echo $this->getChildHtml('store_language') ?>
-                                <?php echo $this->getChildHtml('currency') ?>     
+                                <?php echo $this->getChildHtml('currency') ?>
                             </div>
-			    <div class="left-header">
-				    <?php echo ($this->getLayout()->createBlock('cms/block')->setBlockId('header_info')->toHtml()); ?>
-				    <?php if(!Mage::getSingleton('customer/session')->isLoggedIn()):  ?>
-					<a href="<?php echo Mage::getUrl('customer/account/login'); ?>" title="Login" onclick="return false;">Login</a>
-					<a href="<?php echo Mage::getUrl('customer/account/create'); ?>" title="Register">Register</a>
-				    <?php else:  ?>
-					<a href="<?php echo Mage::getUrl('customer/account'); ?>" title="Hello Customer" onclick="return true;">Hello <?php echo Mage::getSingleton('customer/session')->getCustomer()->getName(); ?></a>
-					<a href="<?php echo Mage::getUrl('customer/account/logout'); ?>" title="Log Out" onclick="return true;">Log Out</a>
-				    <?php endif;  ?>
-			    </div>
-			    <div class="right-header">
-				<a href="<?php echo Mage::getUrl('about'); ?>" title="About" >About</a>
-				<a href="<?php echo Mage::getUrl('contacts'); ?>" title="Contact" >Contact</a>
-				<a href="<?php echo Mage::getUrl('Dealers'); ?>" title="Dealersn" >Dealer</a>
-			    </div>
+                            <div class="left-header">
+                                <?php echo ($this->getLayout()->createBlock('cms/block')->setBlockId('header_info')->toHtml()); ?>
+                                <?php if(!Mage::getSingleton('customer/session')->isLoggedIn()):  ?>
+                                <a href="<?php echo Mage::getUrl('customer/account/login'); ?>" title="Login" onclick="return false;">Login</a>
+                                <a href="<?php echo Mage::getUrl('customer/account/create'); ?>" title="Register">Register</a>
+                                <?php else:  ?>
+                                <a href="<?php echo Mage::getUrl('customer/account'); ?>" title="Hello Customer" onclick="return true;">Hello <?php echo Mage::getSingleton('customer/session')->getCustomer()->getName(); ?></a>
+                                <a href="<?php echo Mage::getUrl('customer/account/logout'); ?>" title="Log Out" onclick="return true;">Log Out</a>
+                                <?php endif;  ?>
+                            </div>
+                            <div class="right-header">
+                                <a href="<?php echo Mage::getUrl('about'); ?>" title="About" >About</a>
+                                <a href="<?php echo Mage::getUrl('contacts'); ?>" title="Contact" >Contact</a>
+                                <a href="<?php echo Mage::getUrl('Dealers'); ?>" title="Dealersn" >Dealer</a>
+                            </div>
                             <div class="clear"></div>
                         </div>
+                    </div>
 
-                        <div class="skip-links"> <span href="#header-account" class="skip-link skip-account"></span></div>
-                        <div id="header-account" class="skip-content"></div>
-                        <div class="clear"></div>
+                    <div class="skip-links"> <span href="#header-account" class="skip-link skip-account"></span></div>
+                    <div id="header-account" class="skip-content"></div>
+                    <div class="clear"></div>
                 </div>
-            </div>
 		</div>
 		<div class="clear"></div>
 	</div>
 </div>
 </div>
 <div class="nav-container">
-	<?php echo $this->getChildHtml('topMenu') ?>
+    <div class="nav-wrapper">
+	    <?php echo $this->getChildHtml('topMenu') ?>
+    </div>
 </div>
 <?php echo $this->getChildHtml('topContainer'); ?>
 <?php if(Mage::getSingleton('cms/page')->getIdentifier() == 'home'  && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms' ) :  ?>
