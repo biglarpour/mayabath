@@ -74,6 +74,12 @@
                                 <a href="<?php echo Mage::getUrl('about'); ?>" title="About" >About</a>
                                 <a href="<?php echo Mage::getUrl('contacts'); ?>" title="Contact" >Contact</a>
                                 <a href="<?php echo Mage::getUrl('Dealers'); ?>" title="Dealersn" >Dealer</a>
+                                <?php $_count = $this->helper('checkout/cart')->getSummaryCount();
+                                       $cart_src = $this->getSkinUrl('images/cart.png');
+                                ?>
+                                <?php if ($_count>0): ?>
+                                    <a href="<?php echo Mage::getUrl('checkout/cart'); ?>" title="Dealersn" ><img class="cart_logo" src="<?php echo $cart_src; ?>"/></a>
+                                <?php endif; ?>
                             </div>
                             <div class="clear"></div>
                         </div>

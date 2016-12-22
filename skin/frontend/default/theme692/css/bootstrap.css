@@ -1322,7 +1322,6 @@ pre code {
 .container{
  max-width: 100%;
  margin: 0 30px;
- display: inline-block;
 }
 .header-links {
   padding: 0 30px;
