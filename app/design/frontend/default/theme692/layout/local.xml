@@ -52,4 +52,17 @@
 
     </PRODUCT_TYPE_configurable>
 
+    <checkout_cart_index>
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbName>Home</crumbName>
+                <crumbInfo><label>Home</label><title>Home</title><link>/home</link></crumbInfo>
+            </action>
+            <action method="addCrumb">
+                <crumbName>Cart</crumbName>
+                <crumbInfo><label>Cart</label><title>Cart</title><link>/checkout/cart</link></crumbInfo>
+            </action>
+        </reference>
+    </checkout_cart_index>
+
 </layout>

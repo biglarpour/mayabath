@@ -2536,8 +2536,8 @@ body.ps-static .wrapper-hover:hover .product-image {
 .item-options li {}
 .item-options li em { color:#3498db; }
 .item-options li em .price { text-decoration:underline; }
-.item-options dt {font-weight:bold;}
-.item-options dd {padding-left:10px;}
+.item-options dt {font-weight:bold;display:inline-block;}
+.item-options dd {padding-left:10px;display:inline-block;}
 .truncated { padding:5px 0; width:auto; }
 .truncated span { cursor:help; }
 .truncated .truncated_full_value { display:none; padding-top:5px; top:auto;}
@@ -4476,18 +4476,65 @@ span[id^="select_label_"], span[id*=" select_label_"] {
 #product_detail_youtube iframe {
 }
 
-#shopping-cart-table li {
+.tfoot_cart li {
     list-style-type: none;
     text-align: center;
 }
 
+.tfoot_cart .price {
+    margin-left: 20px;
+}
+
+#shopping-cart-table {
+    max-width: 1500px;
+    margin: 0 auto 50px auto;
+}
+
+.cart .page-title {
+    max-width: 1500px;
+    margin: auto;
+}
+
+#shopping-cart-table .product-image {
+    border: 2px solid #D3D3D3;
+}
+
+.cart tbody .product-name {
+    font-size: 17px;
+    line-height: 1.6;
+    font-family: "museo_sans300",sans-serif;
+    color: #272727;
+    font-weight: 400;
+}
+
+
 #shopping-cart-totals-table {
     display: inline-block;
 }
+.cart thead {
+    font-family: "brandongrotesque-mediumbook",sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgb(236, 236, 236);
+}
+
+
+.cart #shopping-cart-table thead {
+    max-width: 1500px;
+}
+
+.cart tbody:before {
+          /* This doesn't work because of border-collapse */
+          line-height:3em;
+          content:"_";
+          color:white;
+          display:block;
+      }
 
 #update_botton_cart {
     position: relative;
-    top: -20px;
+    top: -10px;
 }
 
 #update_botton_cart span {
@@ -4505,7 +4552,7 @@ span[id^="select_label_"], span[id*=" select_label_"] {
     border-top: 1px solid #EAEAEA;
     border-bottom: 1px solid #EAEAEA;
     margin: 0 -10000px;
-    padding:5px 10000px 5px;
+    padding:25px 10000px 5px;
 }
 
 #checkout_botton_cart span {
