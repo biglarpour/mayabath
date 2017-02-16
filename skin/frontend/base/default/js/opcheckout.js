@@ -189,6 +189,32 @@ Checkout.prototype = {
         document.body.fire('login:setMethod', {method : this.method});
     },
 
+    setCheckoutMethod: function(option_type){
+        if (option_type === "guest") {
+            this.method = 'guest';
+            var request = new Ajax.Request(
+                this.saveMethodUrl,
+                {method: 'post', onFailure: this.ajaxFailure.bind(this), parameters: {method:'guest'}}
+            );
+            Element.hide('register-customer-password');
+            this.gotoSection('billing', true);
+        }
+        else if(option_type === "register") {
+            this.method = 'register';
+            var request = new Ajax.Request(
+                this.saveMethodUrl,
+                {method: 'post', onFailure: this.ajaxFailure.bind(this), parameters: {method:'register'}}
+            );
+            Element.show('register-customer-password');
+            this.gotoSection('billing', true);
+        }
+        else{
+            alert(Translator.translate('Please choose to register or to checkout as a guest').stripTags());
+            return false;
+        }
+        document.body.fire('login:setMethod', {method : this.method});
+    },
+
     setBilling: function() {
         if (($('billing:use_for_shipping_yes')) && ($('billing:use_for_shipping_yes').checked)) {
             shipping.syncWithBilling();

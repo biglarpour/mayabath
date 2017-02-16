@@ -264,7 +264,7 @@ button.button span:before,
 .wrapper .page {
     text-align: center;
     max-width: 1500px;
-    padding: 0 20px 0 25px;
+    padding: 0;
 }
 .page-print { background:#fff; padding:20px; text-align:left; }
 .page-empty { background:#fff; padding:20px; text-align:left; }
@@ -369,20 +369,22 @@ button.button > span {
 	white-space:normal; 
 	padding:0;
 }
-button.button span span {padding:16px 24px; display:block; float:left;}
+button.button span span {padding:8px 22px; display:block; float:left;}
 
 button.button > span,
 .page-sitemap .links a,
 .but-link,
 .scrollpages a.loadmore {
-	font-family:"Noto Sans",sans-serif;
-	background:#303c4b;
+	font-family:"museo_sans100",sans-serif;
+	background:#3498DB none repeat scroll 0px 0px;
 	color:#fff;
 	font-size:14px;
 	line-height:19px;
-	font-weight: bold;
+	font-weight: normal;
+	text-transform: uppercase;
 	position: relative;
 	z-index: 2;
+	border-radius: 5px;
 }
 button.button-bg-1 > span {
 	background: #ffa744;
@@ -392,15 +394,15 @@ button.button-bg-2 > span {
 }
 button.button > span:after,
 .but-link:after {
-	background: none repeat scroll 0 0 #3498db;
+	background: #338ECB none repeat scroll 0px 0px;
     bottom: 50%;
     content: "";
     height: 0;
     left: 50%;
     position: absolute;
-    transition: all 0.4s ease 0s;
     width: 0%;
     z-index: -1;
+    border-radius: 5px;
 }
 
 body.ps-static button.button:hover > span:after,
@@ -411,7 +413,6 @@ body.ps-static .but-link:focus:after {
     width: 100%;
     bottom: 0;
     left: 0;
-    transition: all 0.2s ease 0s;
 }
 
 body.ps-static button.button:hover > span {background: none;}
@@ -660,7 +661,7 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 	text-transform: uppercase;
 }
 .page-title.center,
-.category-title { position: relative; max-width: 1500px;margin-top: 15px;display: inline-block;}
+.category-title { margin:auto; max-width: 1500px;margin-top: 15px;display: block;}
 .category-title h1,
 .category-title h2 {}
 
@@ -959,7 +960,6 @@ tr.summary-details-excluded { font-style:italic; }
     padding: 5px 5px 5px 45px;
 	margin-right: 30px;
 	width:100%;
-	max-width: 200px;
 	height: 40px;
 	color: #777777;
 	background: #fff;
@@ -1848,7 +1848,6 @@ body.ps-static .wrapper-hover:hover .product-image {
 .add-to-cart label { margin-right: 7px; color:#3a3a3a; }
 .add-to-cart .qty {  font-size:12px; text-align:center; padding: 3px 6px 4px 7px; background: #fff; line-height: 24px; }
 .add-to-cart button.button {    float:left;
-                                background-color: #3498DB;
                                 text-transform: uppercase;
                                 height: 56px;
                                 line-height: 58px;
@@ -1860,7 +1859,6 @@ body.ps-static .wrapper-hover:hover .product-image {
                                 border-radius: 5px;}
 
 .add-to-cart button.button span {float:left; margin: 0 20px;
-                                 background-color: #3498DB;
                                  text-transform: uppercase;
                                  height: 56px;
                                  line-height: 58px;
@@ -2670,7 +2668,12 @@ body.ps-static .wrapper-hover:hover .product-image {
 }
 .block-progress dd.complete address{color:#8a8989; font-style:italic;}
 .opc {position:relative; }
-.opc li.section { margin-bottom:10px; }
+
+.opc li.section.active {
+    display: block;
+    text-align: center;
+}
+.opc li.section { display: none; margin-bottom:10px; }
 .opc p {margin-bottom:5px;}
 .opc .buttons-set.disabled button.button { display:none; }
 .opc .buttons-set .please-wait { height:21px; line-height:21px; font-size:12px; color:#000; }
@@ -2693,9 +2696,10 @@ body.ps-static .wrapper-hover:hover .product-image {
 }
 .opc .step-title h2 {
 	float:left;
-	font-size:14px;
+	font-size: 30px;
 	line-height:17px;
-	color:#fff;
+	color:#222;
+	font-weight: 300;
 	margin-bottom:0;
 	padding-top:5px;
 }
@@ -2724,15 +2728,15 @@ body.ps-static .wrapper-hover:hover .product-image {
 #co-shipping-form{ border:1px solid #e5e5e5; padding:10px; display:block;}
 
 .opc .active { }
-.opc .active .step-title { cursor:default; background:#3498db; }
+.opc .active .step-title { cursor:default;background:#fff;}
 .opc .active .step-title .number { background:#fff; color:#3a3a3a; }
-.opc .active .step-title h2 { font-size:12px; line-height:15px; padding-top:7px; }
+.opc .active .step-title h2 {padding-top:7px; }
 
 #checkout-step-login {}
 #checkout-step-login h3{ font-size:12px; text-transform:uppercase; font-weight:normal; color:#3498db;}
-#checkout-step-login .col2-set {border:1px solid #e5e5e5;padding:20px; position:relative; overflow:hidden; }
+#checkout-step-login .col2-set {padding:20px; position:relative; overflow:hidden; }
 #checkout-step-login .col2-set .col-1 { float:left; margin-right:3%; width:46%; }
-#checkout-step-login .col2-set .col-2 { float:left; width:46%; }
+#checkout-step-login .col2-set .col-2 { float:left; width:40%; }
 #checkout-step-login .col2-set .buttons-set {margin:0;padding:0;}
 #checkout-step-login .col2-set > .col-1 h4{font-size:12px; text-transform:uppercase; font-weight:normal; color:#3498db;}
 #checkout-step-login .col2-set .col-2  h4{font-size:12px; text-transform:none; font-weight:normal; color:#7b7b7b;}
@@ -3320,7 +3324,7 @@ body div.shadow.active-form {height: 100%; width: 100%;}
 #back-top span:before {content: "\f102"; display: block;}
 #back-top:hover span {background: #181818;}
 .footer .block-title {text-align:left;margin-bottom: 10px;}
-.footer .col-item3 {padding: 10px 20px;}
+.footer .col-item3 {padding: 10px 0;}
 
 /* ======================================================================================= */
 .footer .block-subscribe {padding: 0; margin: 0 18% 0 0; overflow: hidden; float: left;}
@@ -3353,7 +3357,7 @@ body div.shadow.active-form {height: 100%; width: 100%;}
 
 /* Footer ================================================================================ */
 .footer-container{ background: #fff; }
-.footer {display: inline-block;}
+.footer {display: inline-block;max-width:1500px;margin:auto;}
 .footer-top {
   margin: 0 -10000px;
   border-top:1px solid #ececec;
@@ -3890,10 +3894,6 @@ button.button > span,
 .grid-full span,
 .header-info i,
 .aw-blog-read-more {
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
 }
 
 .wrapper-hover .product-image img {
@@ -4577,6 +4577,70 @@ span[id^="select_label_"], span[id*=" select_label_"] {
     display: inline-block;
     width: 100%;
 }
+
+.checkout-onepage-index .col-main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.checkout-onepage-index .step-title {
+
+}
+
+.checkout-step-login {
+    max-width: 900px;
+}
+
+.nav-wrapper .logo-container {
+    padding-left: 0;
+}
+
+.buttons-signin {
+    float: left;
+    text-align: left;
+}
+
+.forgot-password {
+    margin-top: 15px;
+}
+
+.checkout-onepage-index .col-2 {
+    border-right: 1px solid #ECECEC;
+}
+#dt_method_ccsave,
+#dt_method_checkmo {
+    display: none;
+}
+.buttons-guest-register {
+    margin-top: 36px;
+    text-align: left;
+    margin-left: 14%;
+    width: 100%;
+}
+
+.buttons-guest-register div,
+.buttons-guest-register button,
+.buttons-guest-register span {
+    width: 100%;
+    max-width: 250px;
+}
+
+.buttons-guest-register div {
+    margin: 10px 0;
+}
+#onepage-guest-button span,
+#onepage-guest-button span::after {
+    background: transparent none repeat scroll 0% 0%;
+    color: black;
+    border: 1px solid rgb(192, 192, 192);
+}
+
+.buttons-guest-register .need-account-text {
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 17px;
+}
+
 /* Media queries for responsive */
 
 @media only screen and (max-width: 767px) {
