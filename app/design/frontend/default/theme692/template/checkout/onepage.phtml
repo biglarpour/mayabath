@@ -49,7 +49,7 @@ var Excellence = Class.create(Checkout, {
     initialize: function($super,accordion, urls){
         $super(accordion, urls);
         //New Code Addded
-        this.steps = ['billing', 'shipping', 'shipping_method', 'payment', 'review'];
+        this.steps = ['billing', 'shipping', 'payment', 'review'];
     },
     setMethodGuest: function(){
         Element.hide('register-customer-password');

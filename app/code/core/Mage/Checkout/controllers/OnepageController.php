@@ -369,6 +369,8 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
             return;
         }
         if ($this->getRequest()->isPost()) {
+            //$postData = $this->getRequest()->getPost('billing', array());
+            //$data = $this->_filterPostData($postData);
             $data = $this->getRequest()->getPost('billing', array());
             $customerAddressId = $this->getRequest()->getPost('billing_address_id', false);
 
@@ -378,23 +380,30 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
             $result = $this->getOnepage()->saveBilling($data, $customerAddressId);
 
             if (!isset($result['error'])) {
-                if ($this->getOnepage()->getQuote()->isVirtual()) {
-                    $result['goto_section'] = 'payment';
-                    $result['update_section'] = array(
+
+                $method = 'freeshipping_freeshipping';
+                $result = $this->getOnepage()->saveShippingMethod($method);
+
+                if (!isset($result['error'])) {
+
+                    if ($this->getOnepage()->getQuote()->isVirtual()) {
+                        $result['goto_section'] = 'payment';
+                        $result['update_section'] = array(
                         'name' => 'payment-method',
                         'html' => $this->_getPaymentMethodsHtml()
-                    );
-                } elseif (isset($data['use_for_shipping']) && $data['use_for_shipping'] == 1) {
-                    $result['goto_section'] = 'shipping_method';
-                    $result['update_section'] = array(
-                        'name' => 'shipping-method',
-                        'html' => $this->_getShippingMethodsHtml()
-                    );
+                        );
+                    } elseif (isset($data['use_for_shipping']) && $data['use_for_shipping'] == 1) {
+                        $result['goto_section'] = 'payment';
+                        $result['update_section'] = array(
+                        'name' => 'payment-method',
+                        'html' => $this->_getPaymentMethodsHtml()
+                        );
 
-                    $result['allow_sections'] = array('shipping');
-                    $result['duplicateBillingInfo'] = 'true';
-                } else {
-                    $result['goto_section'] = 'shipping';
+                        $result['allow_sections'] = array('shipping');
+                        $result['duplicateBillingInfo'] = 'true';
+                    } else {
+                        $result['goto_section'] = 'shipping';
+                    }
                 }
             }
 
@@ -416,11 +425,17 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
             $result = $this->getOnepage()->saveShipping($data, $customerAddressId);
 
             if (!isset($result['error'])) {
-                $result['goto_section'] = 'shipping_method';
-                $result['update_section'] = array(
-                    'name' => 'shipping-method',
-                    'html' => $this->_getShippingMethodsHtml()
-                );
+                $method = 'freeshipping_freeshipping';
+                $result = $this->getOnepage()->saveShippingMethod($method);
+
+                if (!isset($result['error'])) {
+
+                    $result['goto_section'] = 'payment';
+                    $result['update_section'] = array(
+                        'name' => 'payment-method',
+                        'html' => $this->_getPaymentMethodsHtml()
+                    );
+                }
             }
             $this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
         }

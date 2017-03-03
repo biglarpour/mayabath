@@ -43,7 +43,7 @@ class Mage_Checkout_Block_Onepage extends Mage_Checkout_Block_Onepage_Abstract
         $steps = array();
         $stepCodes = $this->_getStepCodes();
 
-        $stepCodes = array_diff($stepCodes, array('login'));
+        $stepCodes = array('billing', 'shipping', 'payment', 'review');
 
         foreach ($stepCodes as $step) {
             $steps[$step] = $this->getCheckout()->getStepData($step);

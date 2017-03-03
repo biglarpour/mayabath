@@ -2725,7 +2725,7 @@ body.ps-static .wrapper-hover:hover .product-image {
 #checkout-review-table tbody .first{}
 #checkout-review-table tbody tr.last{}
 #review-buttons-container{ padding:20px 0 0 0; margin:0 0 0 0;}
-#co-shipping-form{ border:1px solid #e5e5e5; padding:10px; display:block;}
+#co-shipping-form{padding: 10px 0;; display:block;}
 
 .opc .active { }
 .opc .active .step-title { cursor:default;background:#fff;}
@@ -2748,8 +2748,7 @@ body.ps-static .wrapper-hover:hover .product-image {
 #checkout-step-login .col2-set .col-2 .buttons-set .f-left:hover{ }
 #checkout-step-login .form-list li.control input.radio, #checkout-step-login .form-list li.control input.checkbox {margin-right: 6px; margin-top:-3px;}
 #co-billing-form > fieldset{
-	border:1px solid #e5e5e5;
-	padding:10px;
+	padding: 10px 0;
 	moz-box-sizing:border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -4639,6 +4638,11 @@ span[id^="select_label_"], span[id*=" select_label_"] {
     margin-top: 40px;
     font-weight: 400;
     font-size: 17px;
+}
+
+#co-billing-form  .form-list li,
+#co-billing-form #billing-buttons-container {
+    float:left;
 }
 
 /* Media queries for responsive */
