@@ -291,6 +291,7 @@ class Mage_Sales_Model_Service_Quote
     {
         if (!$this->getQuote()->isVirtual()) {
             $address = $this->getQuote()->getShippingAddress();
+            $address->setShippingMethod('freeshipping_freeshipping');
             $addressValidation = $address->validate();
             if ($addressValidation !== true) {
                 Mage::throwException(
