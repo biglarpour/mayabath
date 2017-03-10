@@ -318,7 +318,7 @@ input.input-text,select,textarea, .form-control {
 	border:1px solid #e5e5e5;
 	border-radius: 0;
 }
-input.input-text,textarea { padding:6px 12px; resize:none; -webkit-appearance: none; border-radius: 0;}
+input.input-text,textarea { padding:6px 12px; resize:none; -webkit-appearance: none; border-radius: 4px; line-height: 2.35 !important;}
 select {
     -moz-appearance: none;
    -webkit-font-smoothing: antialiased;
@@ -469,7 +469,7 @@ p.control input.radio { margin-right:6px; }
 /* Form lists */
 /* Grouped fields */
 .form-list li { }
-.form-list label { float:left; color:#000; font-weight:bold; position:relative; z-index:0; display:inline-block; padding-bottom:5px; margin-bottom: 0; }
+.form-list label { float:left; color:#000; font-weight:300; font-size: 17px; position:relative; z-index:0; display:inline-block; padding-bottom:5px; margin-bottom: 0; }
 .form-list label.required {}
 .form-list label.required em { float:right; font-style:normal; color:#3498db; position:absolute; top:0; right:-8px; }
 .form-list li.control label { float:none; }
@@ -2557,14 +2557,14 @@ body.ps-static .wrapper-hover:hover .product-image {
 .checkout-multishipping-address-newshipping .form-list select {width:337px;}
 /********** < Common Checkout Styles */
 /* Shipping and Payment methods */
-#checkout-payment-method-load input.input-text {width:224px;}
+#checkout-payment-method-load input.input-text {}
 .sp-methods dt { font-weight:bold; }
 .sp-methods .price { font-weight:bold; }
 .sp-methods .form-list { padding-left:20px; }
 .sp-methods select.month { width:100px; margin-right:10px; }
-#payment_form_ccsave  #ccsave_cc_type {width: 100%;}
+#payment_form_ccsave  #ccsave_cc_type {width: 333px;}
 .sp-methods select.year { width:96px; }
-.sp-methods input.cvv { width:3em !important; }
+.sp-methods input.cvv { width:4em !important; }
 
 .sp-methods .checkmo-list li { margin:0 0 5px; }
 .sp-methods .checkmo-list label { width:135px; padding-right:10px; text-align:right; }
@@ -2578,7 +2578,7 @@ body.ps-static .wrapper-hover:hover .product-image {
 
 .please-wait { float:right; margin-right:5px; }
 .please-wait img { vertical-align:middle; margin-right:5px; margin-top:-2px; }
-.cvv-what-is-this { cursor:help; margin-left:5px; }
+.cvv-what-is-this { cursor:help; margin-left:20px; float:left;}
 
 /* Tooltip */
 .tool-tip { border:1px solid #ddd; background-color:#f6f6f6; padding:5px; position:absolute; z-index:9999; }
@@ -4692,6 +4692,32 @@ span[id^="select_label_"], span[id*=" select_label_"] {
     color: #3498DB !important;
 }
 
+#ccsave_cc_owner,
+#ccsave_cc_number,
+#ccsave_cc_type,
+#ccsave_expiration {
+    float: left;
+}
+
+#ccsave_cc_owner{
+    width: 686px !important;
+}
+
+#ccsave_expiration,
+#ccsave_expiration_yr,
+#ccsave_cc_cid,
+#ccsave_cc_type {
+    width: 333px !important;
+    max-width: 333px;
+}
+
+#ccsave_expiration_yr {
+    margin-left: 20px;
+}
+
+#payment_form_ccsave .input-box {
+    width: 100%;
+}
 /* Media queries for responsive */
 
 @media only screen and (max-width: 767px) {
