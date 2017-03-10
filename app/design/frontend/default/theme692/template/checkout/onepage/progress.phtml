@@ -25,12 +25,14 @@
  */
 ?>
 <div class="block block-progress opc-block-progress">
-    <div class="block-title">
-        <strong><span><?php echo $this->__('Your Checkout Progress') ?></span></strong>
+    <div class="block-title checkout_call">
+        <strong><span><?php echo $this->__('Questions?') ?></span></strong>
     </div>
     <div class="block-content">
         <dl>
-            <?php echo $this->getChildHtml('total_sidebar');?>
+            <div id="cart-detail-opcheckout">
+                <?php echo $this->getChildHtml('total_sidebar');?>
+            </div>
             <?php if ($this->getCheckout()->getStepData('billing', 'is_show')): ?>
             <div id="billing-progress-opcheckout">
                 <?php echo $this->getChildHtml('billing.progress') ?>

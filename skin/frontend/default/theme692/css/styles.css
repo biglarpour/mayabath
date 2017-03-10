@@ -536,7 +536,7 @@ p.control input.radio { margin-right:6px; }
 .opc .form-list .customer-name-suffix .name-lastname,
 .opc .form-list .customer-name-middlename .name-firstname,
 .opc .form-list .customer-name-middlename-suffix .name-firstname,
-.opc .form-list .customer-name-middlename-suffix .name-lastname { width:191px; }
+.opc .form-list .customer-name-middlename-suffix .name-lastname { width:250px; }
 
 .form-list .customer-name-prefix .name-firstname input.input-text,
 .form-list .customer-name-suffix .name-lastname input.input-text,
@@ -548,7 +548,7 @@ p.control input.radio { margin-right:6px; }
 .opc .form-list .customer-name-suffix .name-lastname input.input-text,
 .opc .form-list .customer-name-middlename .name-firstname input.input-text,
 .opc .form-list .customer-name-middlename-suffix .name-firstname input.input-text,
-.opc .form-list .customer-name-middlename-suffix .name-lastname input.input-text { width:171px; }
+.opc .form-list .customer-name-middlename-suffix .name-lastname input.input-text { width:230px; }
 
 .form-list .customer-dob .dob-month,
 .form-list .customer-dob .dob-day,
@@ -2644,21 +2644,21 @@ body.ps-static .wrapper-hover:hover .product-image {
 .block.block-progress .block-content{ padding:0 0 0 0;}
 .block-progress dt {
 	display:block;
-	background: #757575;
+	background: #F0EFEF;
 	font-size:14px;
 	line-height:17px;
-	color:#fff;
+	color:#000;
 	text-transform:none;
 	margin-bottom:10px;
 	padding:9px 10px 11px;
 }
-.block-progress dt:first-child {border-top:none;}
-.block-progress dt.complete a { color:#fff; text-decoration:underline; }
-.block-progress dt.complete a:hover { text-decoration:none; }
+.block-progress dt:first-child {border-bottom: 1px solid #CFCFCF; text-align:left;font-size:16px;}
+.block-progress dt.complete a {}
+.block-progress dt.complete a:hover { color:#323232 }
 .block-progress dt.complete .separator{ color:#908f8f; margin: 0 8px; }
 .block-progress dt.complete{ position:relative; z-index:999;}
 .block-progress dt.complete,
-.block-progress dd.complete { padding-bottom:12px; margin-bottom:10px; }
+.block-progress dd.complete { padding:12px; margin-bottom:10px; }
 .block-progress dd.complete {
 	border:1px solid #e5e5e5;
 	color:#8a8989;
@@ -2758,9 +2758,9 @@ body.ps-static .wrapper-hover:hover .product-image {
 .opc .step .tool-tip { right:20px; top:20px!important; }
 .opc .order-review {}
 .opc .buttons-set{border:0;}
-.opc .field{width:334px;}
+.opc .field{width:370px;}
 .opc .fields input,
-.opc .field input{width:314px;}
+.opc .field input{width:350px;}
 .opc .name-lastname,
 .opc .field-2{width:292px; float:left;}
 .opc .field-2 input{width:310px;}
@@ -4495,7 +4495,6 @@ span[id^="select_label_"], span[id*=" select_label_"] {
 }
 
 #shopping-cart-table .product-image {
-    border: 2px solid #D3D3D3;
 }
 
 .cart tbody .product-name {
@@ -4577,10 +4576,29 @@ span[id^="select_label_"], span[id*=" select_label_"] {
     width: 100%;
 }
 
-.checkout-onepage-index .col-main {
-    max-width: 1000px;
+.checkout-onepage-index .main {
+    max-width: 1200px;
     margin: auto;
 }
+
+.checkout-onepage-index input[id="billing:street2"] {
+    display: none;
+}
+.checkout-onepage-index input[id="billing:fax"],
+.checkout-onepage-index label[for="billing:fax"]  {
+    display: none;
+}
+.checkout-onepage-index input[id="billing:street1"] {
+    width: 742px !important;
+}
+
+.checkout-onepage-index input[id="billing:email"] {
+    width: 373px !important;
+}
+.checkout-onepage-index button.button span span {
+    padding: 8px 133px;
+}
+
 
 .checkout-onepage-index .step-title {
 
@@ -4643,6 +4661,35 @@ span[id^="select_label_"], span[id*=" select_label_"] {
 #co-billing-form  .form-list li,
 #co-billing-form #billing-buttons-container {
     float:left;
+}
+
+.edit_order_detail {
+    font-size: 14px;
+    margin-left: 10px;
+    color: #727272;
+}
+
+.left-header p {
+ display: inline;
+}
+
+.checkout_call {
+    border: none !important;
+    margin-bottom: 15px !important;
+}
+
+#cart-detail-opcheckout {
+    border: 1px solid #CFCFCF;
+}
+
+#cart-detail-opcheckout .data-table tbody tr{
+    color: #000;
+}
+
+#cart-detail-opcheckout .data-table tbody tr:nth-last-child(1) {
+    background: #F0EFEF;
+    border-top: 1px solid #CFCFCF;
+    color: #3498DB !important;
 }
 
 /* Media queries for responsive */

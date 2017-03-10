@@ -30,7 +30,7 @@
 ?>
 <?php if ($this->getTotals()): ?>
 <dt class="complete">
-    <?php echo $this->__('Your Order') ?> <span class="separator">|</span> <a href="<?php echo $this->getUrl('checkout/cart') ?>">Change</a>
+    <?php echo $this->__('Order Details') ?><a class="edit_order_detail" href="<?php echo $this->getUrl('checkout/cart') ?>">Edit</a>
 </dt>
 <dd>
     <table class="data-table ">
@@ -42,7 +42,7 @@
             <td class="a-right" colspan="<?php echo $_colspan; ?>">
                 <small><?php echo $this->helper('sales')->__('Your credit card will be charged for') ?></small>
             </td>
-            <td class="a-right">
+            <td class="a-left">
                 <small><?php echo $this->displayBaseGrandtotal() ?></small>
             </td>
         </tr>
