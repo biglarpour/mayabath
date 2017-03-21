@@ -30,8 +30,8 @@
     </div>
     <div class="block-content">
         <dl>
-            <div id="cart-detail-opcheckout">
-                <?php echo $this->getChildHtml('total_sidebar');?>
+            <div id="total-progress-opcheckout">
+                <?php echo $this->getChildHtml('total.progress');?>
             </div>
             <?php if ($this->getCheckout()->getStepData('billing', 'is_show')): ?>
             <div id="billing-progress-opcheckout">

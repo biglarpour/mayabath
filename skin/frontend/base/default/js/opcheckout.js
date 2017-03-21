@@ -67,6 +67,7 @@ Checkout.prototype = {
 
     reloadProgressBlock: function(toStep) {
         this.reloadStep(toStep);
+//        this.reloadStep('total');
         if (this.syncBillingShipping) {
             this.syncBillingShipping = false;
             this.reloadStep('shipping');
@@ -122,7 +123,6 @@ Checkout.prototype = {
     },
 
     gotoSection: function (section, reloadProgressBlock) {
-
         if (reloadProgressBlock) {
             this.reloadProgressBlock(this.currentStep);
         }

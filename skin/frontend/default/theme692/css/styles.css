@@ -2713,10 +2713,10 @@ body.ps-static .wrapper-hover:hover .product-image {
 #checkout-review-table tr{ background:none;}
 #checkout-review-table thead{ background:none;}
 #checkout-review-table th{ padding:12px 20px 12px 20px; font-size:12px; font-weight:bold; color:#000000;}
-#checkout-review-table td{ border:1px solid #e5e5e5; background:#none; padding:15px 20px;}
+#checkout-review-table td{ background:#none; padding:15px 20px;}
 #checkout-review-table td h3{ margin-bottom:0; font-size:12px; color:#2f2f2f; text-transform:uppercase;}
 #checkout-review-table .price{ font-weight:bold;}
-#checkout-review-table th{ border:1px solid #e5e5e5;}
+#checkout-review-table thead th{ border-bottom:1px solid #e5e5e5;}
 #checkout-review-table-wrapper { overflow:hidden;}
 #checkout-review-table{}
 #checkout-review-table .item-options {padding-top:5px;}
@@ -4678,15 +4678,15 @@ span[id^="select_label_"], span[id*=" select_label_"] {
     margin-bottom: 15px !important;
 }
 
-#cart-detail-opcheckout {
+#total-progress-opcheckout {
     border: 1px solid #CFCFCF;
 }
 
-#cart-detail-opcheckout .data-table tbody tr{
+#total-progress-opcheckout .data-table tbody tr{
     color: #000;
 }
 
-#cart-detail-opcheckout .data-table tbody tr:nth-last-child(1) {
+#total-progress-opcheckout .data-table tbody tr:nth-last-child(1) {
     background: #F0EFEF;
     border-top: 1px solid #CFCFCF;
     color: #3498DB !important;
@@ -4717,6 +4717,20 @@ span[id^="select_label_"], span[id*=" select_label_"] {
 
 #payment_form_ccsave .input-box {
     width: 100%;
+}
+
+#checkout-review-load h2 {
+    border-bottom: 1px solid grey;
+}
+
+#checkout-review-load .checkout-review-payment-info,
+#checkout-review-load .checkout-review-billing-address,
+#checkout-review-load .checkout-review-shipping-address {
+    text-align: left;
+}
+
+.checkout-review-payment-info .cc_owner {
+    text-transform: capitalize;
 }
 /* Media queries for responsive */
 
