@@ -74,7 +74,7 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
      */
     protected function _goBack()
     {
-        $returnUrl = $this->getRequest()->getParam('return_url');
+        $returnUrl = Mage::getUrl('checkout/onepage');
         if ($returnUrl) {
 
             if (!$this->_isUrlInternal($returnUrl)) {
@@ -232,10 +232,6 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
             );
 
             if (!$this->_getSession()->getNoCartRedirect(true)) {
-                if (!$cart->getQuote()->getHasError()) {
-                    $message = $this->__('%s was added to your shopping cart.', Mage::helper('core')->escapeHtml($product->getName()));
-                    $this->_getSession()->addSuccess($message);
-                }
                 $this->_goBack();
             }
         } catch (Mage_Core_Exception $e) {
