@@ -223,6 +223,7 @@ button.button span:before,
 .camera_next:before,
 .footer ul li:before,
 .footer .footer-col .tel:before,
+.checkout_call .phone:before,
 .footer .free-shipping a:before,
 .product-view .bx-controls-direction > a:before,
 .header .links li a:before,
@@ -1142,7 +1143,6 @@ img.lazy{
 .block .block-title strong {
 	font-size:23px;
 	line-height:23px;
-	color: #54525e;
 	font-weight: bold;
 }
 .block .block-title a { text-decoration:none !important; }
@@ -1858,7 +1858,7 @@ body.ps-static .wrapper-hover:hover .product-image {
                                 font-weight: 100;
                                 border-radius: 5px;}
 
-.add-to-cart button.button span {float:left; margin: 0 20px;
+.add-to-cart button.button span {
                                  text-transform: uppercase;
                                  height: 56px;
                                  line-height: 58px;
@@ -2098,7 +2098,7 @@ body.ps-static .wrapper-hover:hover .product-image {
 .product-shop { position:relative; }
 .product-shop .price-box.map-info a {float:none; clear:left; padding:0 !important; margin-bottom:3px;}
 .product-shop .add-to-cart {width:100%; padding:10px 0;}
-.product-shop .add-to-cart button.button > span	{ font-size:18px; padding: 0 6px;  }
+.product-shop .add-to-cart button.button > span	{ font-size:18px; padding: 0 75px;  }
 .ajaxcart {-webkit-box-shadow: 6px 10px 25px 10px rgba(0,0,0,0.75);
           -moz-box-shadow: 6px 10px 25px 10px rgba(0,0,0,0.75);
           box-shadow: 6px 10px 25px 10px rgba(0,0,0,0.75);}
@@ -2707,7 +2707,7 @@ body.ps-static .wrapper-hover:hover .product-image {
 .opc .allow .step-title { cursor:pointer; }
 .opc label {padding-bottom:2px;}
 .opc .input-box {margin-bottom:15px;}
-.opc .fields select, .opc .field select {width: 313px;}
+.opc .fields select, .opc .field select {width: 370px;}
 
 
 #checkout-review-table tr{ background:none;}
@@ -2757,7 +2757,9 @@ body.ps-static .wrapper-hover:hover .product-image {
 .opc .step { padding-top:10px; position:relative; }
 .opc .step .tool-tip { right:20px; top:20px!important; }
 .opc .order-review {}
-.opc .buttons-set{border:0;}
+.opc .buttons-set{
+    border:0;
+    }
 .opc .field{width:370px;}
 .opc .fields input,
 .opc .field input{width:350px;}
@@ -4323,9 +4325,7 @@ button.button > span,
 }
 
 .prod-list-view-detail {
-    background-color: #3498DB;
     text-transform: uppercase;
-    width: 35%;
     float: right;
     display : inline-block;
     height: 56px;
@@ -4336,11 +4336,13 @@ button.button > span,
     font-family: "museo_sans100", sans-serif;
     font-style: normal;
     font-weight: 100;
-    border-radius: 5px;
 }
 
 .prod-list-view-detail a {
     color: white;
+    background-color: #3498DB;
+    padding: 15px 85px;
+    border-radius: 5px;
 }
 
 .prod-availability {
@@ -4596,7 +4598,7 @@ span[id^="select_label_"], span[id*=" select_label_"] {
     width: 373px !important;
 }
 .checkout-onepage-index button.button span span {
-    padding: 8px 133px;
+    padding: 8px 100px;
 }
 
 
@@ -4676,6 +4678,29 @@ span[id^="select_label_"], span[id*=" select_label_"] {
 .checkout_call {
     border: none !important;
     margin-bottom: 15px !important;
+    color: black !important;
+    text-align: right
+}
+.checkout_call strong a{
+    color: #428BCA;
+    font-size: 16px;
+    margin-left: 10px;
+}
+.checkout_call strong span{
+    font-size: 16px;
+}
+
+.checkout_call .phone {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.checkout_call .phone:before {
+    content: "\f095";
+}
+.checkout_call .hours {
+    font-size: 14px;
+    color: grey;
 }
 
 #total-progress-opcheckout {
@@ -4732,6 +4757,31 @@ span[id^="select_label_"], span[id*=" select_label_"] {
 .checkout-review-payment-info .cc_owner {
     text-transform: capitalize;
 }
+
+
+#billing-new-address-form > fieldset:nth-child(1) > ul:nth-child(2) > li:nth-child(5) > div:nth-child(2) > div:nth-child(2),
+#billing-new-address-form > fieldset:nth-child(1) > ul:nth-child(2) > li:nth-child(6) > div:nth-child(2) > div:nth-child(2) {
+    width: 600px;
+}
+
+.checkout-onepage-index .buttons-set {
+}
+
+#billing-new-address-form li.control:nth-child(8) {
+    margin-top: 30px;
+}
+
+#billing-buttons-container {
+    position: absolute;
+    right: -307px;
+    bottom: 298px;
+}
+#payment-buttons-container {
+    position: absolute;
+    right: -307px;
+    bottom: 197px;
+}
+
 /* Media queries for responsive */
 
 @media only screen and (max-width: 767px) {

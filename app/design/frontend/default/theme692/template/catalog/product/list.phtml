@@ -79,11 +79,15 @@ $_helper = $this->helper('catalog/output');
                         $configurable= Mage::getModel('catalog/product_type_configurable')->setProduct($_product);
                         $simpleCollection = $configurable->getUsedProductCollection()->addAttributeToSelect('*')->addFilterByRequiredOptions();
                         $oneSize = false;
+                        $onePosition = false;
                         foreach($simpleCollection as $simple){
                             $attributes = $simple->getAttributes();
                             foreach ($attributes as $attribute) {
                                 if ($attribute->getName() == "size" and $oneSize == 0) {
                                     $oneSize = $attribute->getFrontend()->getValue($simple);
+                                }
+                                if ($attribute->getName() == "position" and $onePosition == 0) {
+                                    $onePosition = $attribute->getFrontend()->getValue($simple);
                                 }
                             }
                         }
@@ -105,6 +109,16 @@ $_helper = $this->helper('catalog/output');
                         </span>
                         <span class="product_size_value">
                             <?php echo $oneSize; ?>
+                        </span>
+                    </div>
+                    <?php endif; ?>
+                    <?php if($onePosition != false): ?>
+                    <div class="product_position">
+                        <span class="product_position_title">
+                            POSITION
+                        </span>
+                        <span class="product_position_value">
+                            <?php echo $onePosition; ?>
                         </span>
                     </div>
                     <?php endif; ?>
