@@ -25,60 +25,61 @@
  */
 ?>
 <?php echo $this->getChildHtml('items_before'); ?>
-<div class="checkout-review-payment-info">
-    <h2>
-        Payment Information
-    </h2>
-    <?php
-        $checkout = Mage::getSingleton('checkout/session')->getQuote();
-        $payment = $checkout->getPayment();
-    ?>
-    <div class="cc_owner">
+<div class="checkout-review-top">
+    <div class="checkout-review-shipping-address">
+        <h2>
+            Shipping Address
+        </h2>
         <?php
-            echo $payment->getData("cc_owner");
+            $checkout = Mage::getSingleton('checkout/session')->getQuote();
+            $payment = $checkout->getPayment();
+            $shipping = $checkout->getShippingAddress();
+            echo $shipping->format("html");
         ?>
     </div>
-    <div class="cc_last4">
-        ************
+    <div class="checkout-review-billing-address">
+        <h2>
+            Billing Address
+        </h2>
         <?php
-            echo $payment->getData("cc_last4");
-        ?>
-    </div>
-    <div class="cc_exp">
-        <span>
-            <?php
-                echo str_pad($payment->getData("cc_exp_month"), 2, "0", STR_PAD_LEFT);
-            ?> /
-        </span>
-        <span>
-            <?php
-                echo $payment->getData("cc_exp_year");
-            ?>
-        </span>
-    </div>
-
-</div>
-<div class="checkout-review-billing-address">
-    <h2>
-        Billing Information
-    </h2>
-    <?php
-        $billing = $checkout->getBillingAddress();
+            $billing = $checkout->getBillingAddress();
         echo $billing->format("html");
-    ?>
-</div>
-<div class="checkout-review-shipping-address">
-    <h2>
-        Shipping Information
-    </h2>
-    <?php
-        $shipping = $checkout->getShippingAddress();
-        echo $shipping->format("html");
-    ?>
+        ?>
+    </div>
+    <div class="checkout-review-payment-info">
+        <h2>
+            Payment Method
+        </h2>
+        <li class="cc_owner">
+            <?php
+                echo $payment->getData("cc_owner");
+            ?>
+        </li>
+        <li class="cc_last4">
+            ************
+            <?php
+                echo $payment->getData("cc_last4");
+            ?>
+        </li>
+        <div class="cc_exp">
+            <span>
+                <?php
+                    echo str_pad($payment->getData("cc_exp_month"), 2, "0", STR_PAD_LEFT);
+                ?> /
+            </span>
+            <span>
+                <?php
+                    echo $payment->getData("cc_exp_year");
+                ?>
+            </span>
+        </div>
+
+    </div>
 </div>
 <div id="checkout-review-table-wrapper">
     <table class="data-table" id="checkout-review-table">
         <?php if ($this->helper('tax')->displayCartBothPrices()): $colspan = $rowspan = 2; else: $colspan = $rowspan = 1; endif; ?>
+        <col width="1" />
         <col />
         <col width="1" />
         <col width="1" />
@@ -89,6 +90,7 @@
         <?php endif; ?>
         <thead>
             <tr>
+                <th rowspan="<?php echo $colspan ?>">&nbsp;</th>
                 <th rowspan="<?php echo $rowspan ?>"><?php echo $this->__('Product Name') ?></th>
                 <th colspan="<?php echo $colspan ?>" class="a-center"><?php echo $this->__('Price') ?></th>
                 <th rowspan="<?php echo $rowspan ?>" class="a-center"><?php echo $this->__('Qty') ?></th>
