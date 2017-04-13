@@ -4778,12 +4778,29 @@ span[id^="select_label_"], span[id*=" select_label_"] {
 #billing-buttons-container {
     position: absolute;
     right: -307px;
-    bottom: 258px;
+    bottom: 259px;
 }
 #payment-buttons-container {
     position: absolute;
     right: -307px;
     bottom: 159px;
+}
+
+#review-buttons-container {
+    position: absolute;
+    right: -308px;
+    bottom: 45px;
+}
+
+#review-buttons-container .btn-checkout,
+#review-buttons-container p.f-left,
+#review-buttons-container span.please-wait {
+    display: list-item;
+    float: none;
+}
+
+#review-buttons-container button.button span span{
+    padding: 8px 89.5px;
 }
 
 .checkout-review-top div {
@@ -4798,6 +4815,19 @@ span[id^="select_label_"], span[id*=" select_label_"] {
 
 #product-options-wrapper .input-box {
     width: 275px;
+}
+
+.checkout-onepage-success .buttons-set .button {
+    float: none;
+}
+
+.checkout-onepage-success .main {
+    max-width: 1500px;
+    margin: auto;
+}
+
+.checkout-onepage-success .col-main {
+    width: 100%;
 }
 
 /* Media queries for responsive */

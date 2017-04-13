@@ -41,7 +41,7 @@ class AssertOrderSuccessPlacedMessage extends AbstractConstraint
     /**
      * Message of success checkout.
      */
-    const SUCCESS_MESSAGE = 'YOUR ORDER HAS BEEN RECEIVED.';
+    const SUCCESS_MESSAGE = 'YOUR ORDER HAS BEEN RECEIVED';
 
     /**
      * Assert that success message is correct.
