@@ -32,41 +32,43 @@ jQuery(function(){
 });
 </script>
 <?php }?>
-<form class="cmsSearchForm" id="search_mini_form" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get">
-<div class="search-header">
-    <div class="form-search">
-		<?php if($SearchByCategory == 1){?>
-        <select multiple="multiple" name="search_categories[]" id="search_categories">
-		<?php
-        foreach ($this->helper('ajaxsearch')->getCategoriesDropdown() as $mainCategory): 
-			$level = $mainCategory['level'];
-			$htmllevel = '';
-			if($level > 2){
-				for($i=2; $i <= $level; $i++){
-					$htmllevel.='&nbsp;&nbsp;&nbsp;'; 
+<div class="header-search-bar">
+	<form class="cmsSearchForm" id="search_mini_form" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get">
+	<div class="search-header">
+		<div class="form-search">
+			<?php if($SearchByCategory == 1){?>
+			<select multiple="multiple" name="search_categories[]" id="search_categories">
+			<?php
+			foreach ($this->helper('ajaxsearch')->getCategoriesDropdown() as $mainCategory):
+				$level = $mainCategory['level'];
+				$htmllevel = '';
+				if($level > 2){
+					for($i=2; $i <= $level; $i++){
+						$htmllevel.='&nbsp;&nbsp;&nbsp;';
+					}
 				}
-			}
-		?>
-            <option value="<?php echo $mainCategory['value']?>"><?php echo '&nbsp;'.$htmllevel.$mainCategory['label']; ?></option>
-            <?php endforeach;?>
-        </select>
-		<?php }?>
-		<label for="search"><?php echo $this->__('Search:') ?></label>
-        <span class="p-reletive">
-        	<input id="search" type="text" placeholder="<?php echo $this->__('Search') ?>" name="<?php echo $this->helper('catalogsearch')->getQueryParamName() ?>"  class="input-text" autocomplete="off"/>
-        	<span class="loading"></span>
-        	<span class="clear-bt"></span>
-        </span>
-        <button type="submit" title="<?php echo $this->__('Search') ?>" class="button"><span><span><?php echo $this->__('Search') ?></span></span></button>
-        <div id="search_autocomplete" class="search-autocomplete" style="display: none;"></div>
-    </div>
+			?>
+				<option value="<?php echo $mainCategory['value']?>"><?php echo '&nbsp;'.$htmllevel.$mainCategory['label']; ?></option>
+				<?php endforeach;?>
+			</select>
+			<?php }?>
+			<label for="search"><?php echo $this->__('Search:') ?></label>
+			<span class="p-reletive">
+				<input id="search" type="text" placeholder="<?php echo $this->__('Search') ?>" name="<?php echo $this->helper('catalogsearch')->getQueryParamName() ?>"  class="input-text" autocomplete="off"/>
+				<span class="loading"></span>
+				<span class="clear-bt"></span>
+			</span>
+			<button type="submit" title="<?php echo $this->__('Search') ?>" class="button"><span><span><?php echo $this->__('Search') ?></span></span></button>
+			<div id="search_autocomplete" class="search-autocomplete" style="display: none;"></div>
+		</div>
+	</div>
+	</form>
+
+	<?php echo Mage::helper('ajaxsearch')->getStyle(); ?>
+
+	<script type="text/javascript">
+		var baseUrl = '<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK); ?>';
+		var minchar = <?php echo Mage::getStoreConfig('ajaxsearch/settings/min_char') ?>;
+		var t_request = <?php echo Mage::getStoreConfig('ajaxsearch/settings/time_request') ?>
+	</script>
 </div>
-</form>
-
-<?php echo Mage::helper('ajaxsearch')->getStyle(); ?>
-
-<script type="text/javascript">
-    var baseUrl = '<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK); ?>';
-    var minchar = <?php echo Mage::getStoreConfig('ajaxsearch/settings/min_char') ?>;
-    var t_request = <?php echo Mage::getStoreConfig('ajaxsearch/settings/time_request') ?>                      
-</script>
