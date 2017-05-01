@@ -134,35 +134,35 @@ Calendar.getAbsolutePos = function(element) {
 
     return res;
 
-    // variant 2 (good solution, but lost in IE8)
-    if (element !== null) {
-        res.x = element.offsetLeft;
-        res.y = element.offsetTop;
-
-        var offsetParent = element.offsetParent;
-        var parentNode = element.parentNode;
-
-        while (offsetParent !== null) {
-            res.x += offsetParent.offsetLeft;
-            res.y += offsetParent.offsetTop;
-
-            if (offsetParent != document.body && offsetParent != document.documentElement) {
-                res.x -= offsetParent.scrollLeft;
-                res.y -= offsetParent.scrollTop;
-            }
-            //next lines are necessary to support FireFox problem with offsetParent
-            if (Calendar.is_gecko) {
-                while (offsetParent != parentNode && parentNode !== null) {
-                    res.x -= parentNode.scrollLeft;
-                    res.y -= parentNode.scrollTop;
-                    parentNode = parentNode.parentNode;
-                }
-            }
-            parentNode = offsetParent.parentNode;
-            offsetParent = offsetParent.offsetParent;
-        }
-    }
-    return res;
+//    // variant 2 (good solution, but lost in IE8)
+//    if (element !== null) {
+//        res.x = element.offsetLeft;
+//        res.y = element.offsetTop;
+//
+//        var offsetParent = element.offsetParent;
+//        var parentNode = element.parentNode;
+//
+//        while (offsetParent !== null) {
+//            res.x += offsetParent.offsetLeft;
+//            res.y += offsetParent.offsetTop;
+//
+//            if (offsetParent != document.body && offsetParent != document.documentElement) {
+//                res.x -= offsetParent.scrollLeft;
+//                res.y -= offsetParent.scrollTop;
+//            }
+//            //next lines are necessary to support FireFox problem with offsetParent
+//            if (Calendar.is_gecko) {
+//                while (offsetParent != parentNode && parentNode !== null) {
+//                    res.x -= parentNode.scrollLeft;
+//                    res.y -= parentNode.scrollTop;
+//                    parentNode = parentNode.parentNode;
+//                }
+//            }
+//            parentNode = offsetParent.parentNode;
+//            offsetParent = offsetParent.offsetParent;
+//        }
+//    }
+//    return res;
 
     // variant 2 (not working)
 

@@ -4366,7 +4366,7 @@ button.button > span,
     font-family: "museo_sans300",sans-serif;
 }
 
-#prod-thumb {
+.prod-thumb {
     padding-right: 40px;
 }
 
@@ -4828,6 +4828,17 @@ span[id^="select_label_"], span[id*=" select_label_"] {
 
 .checkout-onepage-success .col-main {
     width: 100%;
+}
+
+
+.product-img-box .product-thumbs {
+  display: none;
+}
+.product-img-box .product-thumbs.visible {
+  display: block;
+}
+.product-img-box .product-thumbs.visible.hidden {
+  visibility: hidden;
 }
 
 /* Media queries for responsive */

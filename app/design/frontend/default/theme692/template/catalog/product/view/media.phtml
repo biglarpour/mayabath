@@ -46,13 +46,8 @@
         continue;
         endif;
         ?>
-        <li class="item">
-            <a class="thumb-link" href="#" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>" data-image-index="<?php echo $i; ?>">
-                <img id="product-collection-image-<?php echo $i; ?>"
-                     src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'small_image', $_image->getFile())->resize(800); ?>"
-                     alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" />
-            </a>
-        </li>
+            <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'small-image', $_image->getFile())->resize(800); ?>"
+                 alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" />
         <?php $i++; endforeach; ?>
     </ul>
 </div>
@@ -101,4 +96,5 @@ jQuery(document).ready(function() {
 
       $(_x('//div[@class="config_swatch"]/dd/div[@class="input-box"]/ul/li'))
     });
-<!--<?php echo $this->getChildHtml('after'); ?>-->
+</script>
+<?php echo $this->getChildHtml('after'); ?>

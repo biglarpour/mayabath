@@ -1225,48 +1225,60 @@ var ProductMediaManager = {
         image.elevateZoom(settings);
     },
 
+    getHTML: function(who){
+        var el= document.createElement("div");
+        el.appendChild(who[0]);
+        var txt= el.innerHTML;
+        el= null;
+        return txt;
+    },
+
+    getElementByXpath: function(xpath)
+       {
+         var results = [];
+         var query = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+         for (i=0, length=query.snapshotLength; i<length; ++i) {
+           results.push(query.snapshotItem(i));
+         }
+         return results;
+       },
+
     swapImage: function(targetImage) {
         targetImage = $j(targetImage);
-        targetImage.addClass('gallery-image');
-
+        targetImageSrc = targetImage[0].src;
+        var imageGallery = $j('.product-img-box');
+        targetXpathStr = "(//div[@class='owl-item']|//div[@class='owl-item active'])";
+        var existing_elements = ProductMediaManager.getElementByXpath(targetXpathStr);
+        var carosello = $j("#prod-thumb");
+        for (i=0, length=existing_elements.length; i<length; ++i) {
+            search_str = targetImageSrc.split("/");
+            search_str = search_str[search_str.length - 1].split("_")[0]
+            existing_el = existing_elements[i].innerHTML;
+            if (existing_el.contains(search_str)) {
+                carosello.owlCarousel().trigger('to.owl.carousel', [i]).trigger('refresh.owl.carousel');
+                return;
+            }
+        }
+        var totalOwlItems = $j(".owl-stage .owl-item").length;
+        nextPosition = totalOwlItems + 1;
+        var imgHTML = ProductMediaManager.getHTML(targetImage)
         ProductMediaManager.destroyZoom();
-
-        var imageGallery = $j('.product-image-gallery');
-
         if(targetImage[0].complete) { //image already loaded -- swap immediately
 
-            imageGallery.find('.gallery-image').removeClass('visible');
-
             //move target image to correct place, in case it's necessary
-            imageGallery.append(targetImage);
-
-            //reveal new image
-            targetImage.addClass('visible');
-
-            //wire zoom on new image
-            ProductMediaManager.createZoom(targetImage);
+            carosello.owlCarousel().trigger('add.owl.carousel', [jQuery('<div class="owl-item">' + imgHTML + '</div>'), nextPosition]).trigger('to.owl.carousel', [nextPosition]).trigger('refresh.owl.carousel');
 
         } else { //need to wait for image to load
 
             //add spinner
             imageGallery.addClass('loading');
-
             //move target image to correct place, in case it's necessary
-            imageGallery.append(targetImage);
+            carosello.owlCarousel().trigger('add.owl.carousel', [jQuery('<div class="owl-item">' + imgHTML + '</div>'), nextPosition]).trigger('to.owl.carousel', [nextPosition]).trigger('refresh.owl.carousel');
 
             //wait until image is loaded
             imagesLoaded(targetImage, function() {
                 //remove spinner
                 imageGallery.removeClass('loading');
-
-                //hide old image
-                imageGallery.find('.gallery-image').removeClass('visible');
-
-                //reveal new image
-                targetImage.addClass('visible');
-
-                //wire zoom on new image
-                ProductMediaManager.createZoom(targetImage);
             });
 
         }

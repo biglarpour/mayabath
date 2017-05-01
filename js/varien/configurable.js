@@ -288,10 +288,6 @@ Product.Config.prototype = {
 
         return price;
 
-        if($('product-price-'+this.config.productId)){
-            $('product-price-'+this.config.productId).innerHTML = price;
-        }
-        this.reloadOldPrice();
     },
 
     reloadOldPrice: function(){
