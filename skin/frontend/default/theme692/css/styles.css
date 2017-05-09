@@ -90,8 +90,8 @@ body          {
     font-weight: 300;
 	color:#777777;
 	text-align:center;
-	/*min-width:320px;
-	position:relative;*/
+    max-width: 100%;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: none;
 	background: #fff;
@@ -271,7 +271,7 @@ button.button span:before,
 .page-empty { background:#fff; padding:20px; text-align:left; }
 .page-popup { padding:20px; text-align:left; margin:0 auto; background:#fff;}
 .page-popup  .ratings .rating-box {float:none; margin:0 auto 10px;}
-.main-container {position:relative; z-index:1;border-top: 1px solid #ececec;  }
+.main-container {position:relative; z-index:1;}
 .main { }
 
 /* Base Columns */
@@ -620,7 +620,7 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 
 /* BreadCrumbs */
 .breadcrumbs {
-	margin:0 auto;
+    margin: 10px auto;
 	max-width: 1500px;
 	padding-bottom: 30px;
 	overflow:hidden;
@@ -3473,7 +3473,7 @@ span.opened:before {content: "\f068";}
 	padding: 0 0 7px;
 }
 
-.contact-left{ width:25%; float:right; padding-bottom:20px;}
+.contact-left{ width:25%; padding-bottom:20px;}
 .contact-left h3 {
 	font-size:13px;
 	line-height:16px;
@@ -3489,9 +3489,9 @@ span.opened:before {content: "\f068";}
 #contactForm .form-list .input-box {width:auto;}
 #contactForm .fieldset{ background:none; border:none; padding:0; margin:0;}
 #contactForm .form-list input.input-text { border-box:border-box; width:95%;}
-#contactForm .form-list .field {float:left;width:33.33%;}
+#contactForm .form-list .field {float: none;}
 #contactForm .form-list li {padding-bottom:10px;}
-#contactForm .form-list li.wide textarea { border-box:border-box; width:100%; resize:none; }
+#contactForm .form-list li.wide textarea { border-box:border-box; width:100%; resize:none; border-radius: 5px;}
 #contactForm .form-list li.wide .input-box {width:98%;}
 #contactForm .buttons-set button.button {float:left; clear:left;}
 #contactForm .buttons-set{ margin:0 0 0 0; padding:0; }
@@ -4574,6 +4574,7 @@ span[id^="select_label_"], span[id*=" select_label_"] {
 }
 
 .nav-wrapper {
+    margin: auto;
     max-width: 1500px;
     padding: 9px 30px;
     width: 100%;
@@ -4840,6 +4841,30 @@ span[id^="select_label_"], span[id*=" select_label_"] {
 }
 .product-img-box .product-thumbs.visible.hidden {
   visibility: hidden;
+}
+
+.buyers-guide {
+    max-width: 75%;
+    margin: 30px auto;
+    text-align: left;
+    font-family: "museo_sans300",sans-serif;
+    color: #272727;
+    font-weight: 400;
+}
+
+.buyers-guide h1{
+    font-size: 1.733em;
+    margin: 30px 0;
+    font-family: "brandongrotesque-lightbook",sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #000;
+}
+
+.contacts-index-index .main-container {
+    max-width: 1500px;
+    margin: auto;
 }
 
 /* Media queries for responsive */
